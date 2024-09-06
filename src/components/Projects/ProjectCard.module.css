@@ -1,0 +1,89 @@
+@import "../../vars.css";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  border-radius: 10px;
+  background: linear-gradient(90deg, #344072 0%, #162847 100%);
+  box-shadow: 0 16px 14px 0 #04152d;
+  padding: 18px 24px;
+  max-width: 345px;
+  transition: background-image 0.4s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.buttonStyle {
+  background: linear-gradient(180deg, #353844 0%, #25272b 100%) !important;
+  box-shadow: 0 3px 3px 0 #04152d;
+}
+.container:hover {
+  background-image: var(--hover-background);
+}
+
+.image {
+  margin-bottom: 26px;
+  width: 300px;
+  height: 200px;
+  object-fit: contain;
+  border-radius: 5px;
+}
+
+.title {
+  font-size: 25px;
+  font-weight: 700;
+}
+
+.description {
+  margin-top: 6px;
+  font-size: 19px;
+  font-weight: 400;
+}
+
+.skills {
+  width: 100%;
+  margin-top: 14px;
+  display: flex;
+  flex-direction: row;
+  flex-wrap: wrap;
+  gap: 6px;
+  list-style: none;
+}
+
+.skill {
+  font-size: 20px;
+  font-weight: 400;
+  border-radius: 100px;
+  background: linear-gradient(90deg, #30333f 0%, #25272b 100%) !important;
+
+  padding: 2px 22px;
+}
+
+.links {
+  width: 100%;
+  margin-top: 26px;
+  display: flex;
+  justify-content: space-around;
+}
+
+.link {
+  text-decoration: none;
+  color: var(--color-text);
+  font-size: 18px;
+  font-weight: 600;
+  border-radius: 100px;
+  background: var(--color-primary);
+  padding: 1px 22px;
+}
+
+.link-disabled {
+  opacity: 0.5;
+  pointer-events: none;
+  cursor: default;
+}
+:root {
+  --hover-background: linear-gradient(
+      90deg,
+      rgba(165, 215, 232, 0.42) 0%,
+      rgba(60, 88, 148, 0) 100%
+    ),
+    linear-gradient(-90deg, #2c365e 0%, #062458 60%);
+}

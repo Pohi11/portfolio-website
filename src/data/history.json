@@ -1,0 +1,28 @@
+[
+  {
+    "role": "Student CO-OP",
+    "organisation": "Royal Canadian Mint",
+    "startDate": "Sep, 2023",
+    "endDate": "Dec, 2023",
+    "experiences": [
+      "Led the setup of a blockchain framework to innovate the Canadian coin distribution system",
+      "Developed Python tools for data analysis and web scraping using Selenium and automating data extraction to Excel",
+      "Conducted and synthesized in-depth research, presenting findings to senior management",
+      "Collaborated on multiple projects, ensuring timely delivery and meeting project deadlines"
+    ],
+    "imageSrc": "history/mint.png"
+  },
+  {
+    "role": "Founder",
+    "organisation": "LeagueKingdom",
+    "startDate": "Jun, 2020",
+    "endDate": "Jul, 2022",
+    "experiences": [
+      "Developed and maintained an e-commerce site with React and MongoDB",
+      "Set up and managed virtual machines on a server, developing custom automation scripts to streamline processes and enhance operational efficiency",
+      "Enhanced product promotion and user engagement via digital marketing channels",
+      "Provided customer support through live chat and email tickets"
+    ],
+    "imageSrc": "history/LK.png"
+  }
+]

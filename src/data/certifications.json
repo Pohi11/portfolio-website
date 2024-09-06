@@ -1,0 +1,35 @@
+[
+  {
+    "organisation": "CompTIA",
+    "role": "Security+ (SY0-701)",
+    "imageSrc": "history/sec.png",
+    "startDate": "Jul 2024",
+    "endDate": "",
+    "experiences": [
+      "General Security Concepts, Threats, Vulnerabilities & Mitigations, Security Architecture",
+      "Security Operations, Security Program Management & Oversight"
+    ]
+  },
+  {
+    "organisation": "Google",
+    "role": "Cybersecurity",
+    "imageSrc": "history/google.png",
+    "startDate": "May 2024",
+    "endDate": "",
+    "experiences": [
+      "Security Frameworks, Cybersecurity Tools, Network Security, Linux, SQL, Threat Analysis",
+      "Incident Response, Python Automation, Stakeholder Communication"
+    ]
+  },
+  {
+    "organisation": "ISC2",
+    "role": "CC",
+    "imageSrc": "history/isc2.png",
+    "startDate": "May 2024",
+    "endDate": "",
+    "experiences": [
+      "Security Principles, Business Continuity, Disaster Recovery & Incident Response",
+      "Access Controls, Network Security, Security Operations"
+    ]
+  }
+]

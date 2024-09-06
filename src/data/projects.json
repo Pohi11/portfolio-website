@@ -1,0 +1,29 @@
+[
+  {
+    "title": "Azure Based Nextcloud Deployment",
+    "imageSrc": "projects/project1.png",
+    "description": "I deployed and secured Nextcloud on an Ubuntu server in Azure to gain hands-on experience with cloud infrastructure, virtual networks, and secure server configuration, while providing a private cloud storage solution",
+    "skills": ["Azure", "Networking", "Linux"],
+    "demo": "https://www.example.com",
+    "source": "https://www.github.com",
+    "id": 1
+  },
+  {
+    "title": "Portfolio Website",
+    "imageSrc": "projects/project3.png",
+    "description": "I built a responsive web page using React and Vite to showcase my resume, skills, and experience",
+    "skills": ["React", "Vite", "JavaScript", "JSON"],
+    "demo": "https://pohi.live",
+    "source": "https://www.github.com",
+    "id": 2
+  },
+  {
+    "title": "Neuraset Medical Simulator",
+    "imageSrc": "projects/project2.png",
+    "description": "I developed embedded software for a consumer EEG neurofeedback device based on patent, analyzing brain activity and providing personalized treatments using the LENS protocol",
+    "skills": ["C++", "Unit Testing", "Qt"],
+    "demo": "https://youtu.be/BrvKSNk3CCA",
+    "source": "https://www.github.com",
+    "id": 3
+  }
+]
