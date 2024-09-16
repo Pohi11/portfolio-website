@@ -43,7 +43,7 @@ export const About = () => {
               <h3>Verified Cybersecurity skills</h3>
               <p>
                 I have demonstrated my ability by obtaining various
-                certifications from CompTIA, Microsoft, Google, and more.
+                certifications from CompTIA, ISC2, Google, and more.
               </p>
             </div>
           </li>
