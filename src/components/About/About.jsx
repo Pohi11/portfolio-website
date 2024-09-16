@@ -31,8 +31,9 @@ export const About = () => {
             <div className={styles.aboutItemText}>
               <h3>Certified Cloud Enthusiast</h3>
               <p>
-                I hold Microsoft's AZ-900 certification with hands-on experience
-                deploying and securing applications on Azure virtual machines.
+                I am currently working towards Microsoft's AZ-900 certification
+                with hands-on experience deploying and securing applications on
+                Azure virtual machines.
               </p>
             </div>
           </li>

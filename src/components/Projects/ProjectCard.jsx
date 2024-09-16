@@ -25,7 +25,7 @@ export const ProjectCard = ({
         })}
       </ul>
       <div className={styles.links}>
-        {id === 1 && ( // Gray out both demo and source for the first project
+        {id === 1 && (
           <>
             <a
               href={demo}
@@ -41,7 +41,7 @@ export const ProjectCard = ({
             </a>
           </>
         )}
-        {id === 2 && ( // Show both demo and source for the second project
+        {id === 2 && (
           <>
             <a href={demo} className={`${styles.link} ${styles.buttonStyle}`}>
               Demo
@@ -51,7 +51,25 @@ export const ProjectCard = ({
             </a>
           </>
         )}
-        {id === 3 && ( // Show demo and gray out source for the third project
+        {id === 3 && (
+          <>
+            <a
+              href="/splunkPractice.pdf"
+              target="_blank"
+              rel="noopener noreferrer"
+              className={`${styles.link} ${styles.buttonStyle}`}
+            >
+              Demo
+            </a>
+            <a
+              href={source}
+              className={`${styles.link} ${styles.buttonStyle} ${styles.linkDisabled}`}
+            >
+              Source
+            </a>
+          </>
+        )}
+        {id === 4 && (
           <>
             <a href={demo} className={`${styles.link} ${styles.buttonStyle}`}>
               Demo

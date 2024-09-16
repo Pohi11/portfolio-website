@@ -9,14 +9,29 @@
     "id": 1
   },
   {
+    "title": "Splunk Monitoring and Analysis",
+    "imageSrc": "projects/project4.png",
+    "description": "For practice, I deployed Splunk Enterprise and utilized the BOTSv3 dataset to simulate a real-world security environment, writing and executing custom queries to detect potential threats. I then visualized these findings in a clear and digestible manner through custom dashboards, gaining valuable practical insights and hands-on experience into security log analysis and threat detection.",
+    "skills": [
+      "Splunk",
+      "Log Analysis",
+      "Security Monitoring",
+      "Data Visualization"
+    ],
+    "demo": "https://youtu.be/BrvKSNk3CCA",
+    "source": "https://www.github.com",
+    "id": 3
+  },
+  {
     "title": "Portfolio Website",
     "imageSrc": "projects/project3.png",
     "description": "I built a responsive web page using React and Vite to showcase my resume, skills, and experience",
     "skills": ["React", "Vite", "JavaScript", "JSON"],
     "demo": "https://pohi.live",
-    "source": "https://www.github.com",
+    "source": "https://github.com/Pohi11/portfolio-website",
     "id": 2
   },
+
   {
     "title": "Neuraset Medical Simulator",
     "imageSrc": "projects/project2.png",
@@ -24,6 +39,6 @@
     "skills": ["C++", "Unit Testing", "Qt"],
     "demo": "https://youtu.be/BrvKSNk3CCA",
     "source": "https://www.github.com",
-    "id": 3
+    "id": 4
   }
 ]
