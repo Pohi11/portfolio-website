@@ -1,14 +1,26 @@
 [
   {
+    "role": "Software Engineer, Automation",
+    "organisation": "CGI",
+    "startDate": "Jan, 2025",
+    "endDate": "Aug, 2025",
+    "experiences": [
+      "Architected and deployed scalable microservices architecture to streamline critical business workflows, reducing operational costs while achieving data accuracy",
+      "Designed and implemented a centralized automation dashboard using Django and Bootstrap, consolidating multiple microservices for improved operational efficiency",
+      "Engineered an intelligent email automation system leveraging Django's background tasks, automating response generation and reducing average response time from hours to minutes"
+    ],
+    "imageSrc": "history/cgi.png"
+  },
+  {
     "role": "Student CO-OP",
-    "organisation": "Royal Canadian Mint",
+    "organisation": "Business Intelligence & Operations Co-op",
     "startDate": "Sep, 2023",
     "endDate": "Dec, 2023",
     "experiences": [
-      "Led the setup of a blockchain framework to innovate the Canadian coin distribution system",
-      "Developed Python tools for data analysis and web scraping using Selenium and automating data extraction to Excel",
-      "Conducted and synthesized in-depth research, presenting findings to senior management",
-      "Collaborated on multiple projects, ensuring timely delivery and meeting project deadlines"
+      "Led business intelligence initiatives through Python-based automation tools, processing 62,000+ data points, reducing manual operations time",
+      "Developed and presented operational improvement strategies through blockchain technology research and distribution system analysis",
+      "Actively contributed to weekly strategy meetings, providing data-driven insights",
+      "Collaborated cross-functionally to deliver strategic projects, ensuring timely delivery and meeting project deadlines"
     ],
     "imageSrc": "history/mint.png"
   },
