@@ -7,7 +7,8 @@
     "experiences": [
       "Architected and deployed scalable microservices architecture to streamline critical business workflows, reducing operational costs while achieving data accuracy",
       "Designed and implemented a centralized automation dashboard using Django and Bootstrap, consolidating multiple microservices for improved operational efficiency",
-      "Engineered an intelligent email automation system leveraging Django's background tasks, automating response generation and reducing average response time from hours to minutes"
+      "Engineered an intelligent email automation system leveraging Django's background tasks, automating response generation and reducing average response time from hours to minutes",
+      "Designed and developed a user-friendly front-end purchase confirmation page for ISED Canada using Spring Boot"
     ],
     "imageSrc": "history/cgi.png"
   },
