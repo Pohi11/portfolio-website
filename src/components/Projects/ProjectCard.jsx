@@ -82,6 +82,26 @@ export const ProjectCard = ({
             </a>
           </>
         )}
+        {id === 5 && (
+          <>
+            <a href={demo} className={`${styles.link} ${styles.buttonStyle}`}>
+              Demo
+            </a>
+            <a href={source} className={`${styles.link} ${styles.buttonStyle}`}>
+              Source
+            </a>
+          </>
+        )}
+        {id === 6 && (
+          <>
+            <a href={demo} className={`${styles.link} ${styles.buttonStyle}`}>
+              Demo
+            </a>
+            <a href={source} className={`${styles.link} ${styles.buttonStyle}`}>
+              Source
+            </a>
+          </>
+        )}
       </div>
     </div>
   );

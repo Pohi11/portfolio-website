@@ -1,39 +1,41 @@
 [
   {
-    "role": "Software Engineer, Automation",
+    "role": "Software Engineer, Co-op",
     "organisation": "CGI",
     "startDate": "Jan, 2025",
     "endDate": "Aug, 2025",
     "experiences": [
-      "Architected and deployed scalable microservices architecture to streamline critical business workflows, reducing operational costs while achieving data accuracy",
-      "Designed and implemented a centralized automation dashboard using Django and Bootstrap, consolidating multiple microservices for improved operational efficiency",
-      "Engineered an intelligent email automation system leveraging Django's background tasks, automating response generation and reducing average response time from hours to minutes",
-      "Designed and developed a user-friendly front-end purchase confirmation page for ISED Canada using Spring Boot"
+      "Designed, developed, delivered and provided ongoing support for a critical full-stack payment processing application for a key Government of Canada service using Java (Spring Boot), JavaScript, HTML, and CSS",
+      "Managed application deployment lifecycle on AWS, collaborating with cloud infrastructure teams and utilizing AWS CodeCommit for Git version control",
+      "Developed an autonomous AI agent using OpenAI's Agents SDK during an internal hackathon, enabling end-to-end support ticket resolution and streamlining customer support workflows",
+      "Architected and deployed automation tools written in Python to streamline business reports, reducing operational costs while achieving data accuracy",
+      "Designed and implemented a centralized automation dashboard using Django, consolidating multiple tools for improved operational efficiency"
     ],
     "imageSrc": "history/cgi.png"
   },
   {
-    "role": "Student CO-OP",
-    "organisation": "Business Intelligence & Operations Co-op",
+    "role": "Business Intelligence & Operations Co-op",
+    "organisation": "Royal Canadian Mint",
     "startDate": "Sep, 2023",
     "endDate": "Dec, 2023",
     "experiences": [
-      "Led business intelligence initiatives through Python-based automation tools, processing 62,000+ data points, reducing manual operations time",
+      "Led business intelligence initiatives through Python-based automation tools, processing 62,000+ data points reducing manual operations time",
       "Developed and presented operational improvement strategies through blockchain technology research and distribution system analysis",
+      "Optimized operational processes through automated data collection and analysis, enhancing system efficiency",
       "Actively contributed to weekly strategy meetings, providing data-driven insights",
       "Collaborated cross-functionally to deliver strategic projects, ensuring timely delivery and meeting project deadlines"
     ],
     "imageSrc": "history/mint.png"
   },
   {
-    "role": "Founder",
+    "role": "Owner and Developer",
     "organisation": "LeagueKingdom",
     "startDate": "Jun, 2020",
     "endDate": "Jul, 2022",
     "experiences": [
-      "Developed and maintained an e-commerce site with React and MongoDB",
-      "Set up and managed virtual machines on a server, developing custom automation scripts to streamline processes and enhance operational efficiency",
-      "Enhanced product promotion and user engagement via digital marketing channels",
+      "Developed and maintained an online game account marketplace site using React, Express.js and MongoDB",
+      "Set up and managed virtual machines on a server, creating custom automation scripts to streamline backend processes, enhancing operational efficiency",
+      "Enhanced product promotion and user engagement through targeted digital marketing campaigns, resulting in a 25% increase in traffic and customer retention",
       "Provided customer support through live chat and email tickets"
     ],
     "imageSrc": "history/LK.png"

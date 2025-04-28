@@ -1,8 +1,26 @@
 [
   {
+    "title": "Auto Assistant 360",
+    "imageSrc": "projects/auto-assist.png",
+    "description": "Developed an autonomous AI support agent using Python and OpenAI's Agent SDK during an internal hackathon at CGI.",
+    "skills": ["Python", "OpenAI Agent SDK", "PostgreSQL", "AI/ML", "Email Automation"],
+    "demo": "https://youtu.be/UbDwrGHJkL0",
+    "source": "https://github.com/Pohi11/Auto-Agent-360",
+    "id": 5
+  },
+  {
+    "title": "GenAI Document Q&A",
+    "imageSrc": "projects/rag.png",
+    "description": "Developed a Retrieval-Augmented Generation (RAG) system enabling natural language queries on user-uploaded PDF documents.",
+    "skills": ["Python", "LangChain", "Ollama", "RAG", "ChromaDB", "Streamlit"],
+    "demo": "https://youtu.be/En4jz2EVy5s",
+    "source": "https://github.com/Pohi11/document-qa-rag-system",
+    "id": 6
+  },
+  {
     "title": "Azure Based Nextcloud Deployment",
     "imageSrc": "projects/project1.png",
-    "description": "I deployed and secured Nextcloud on an Ubuntu server in Azure to gain hands-on experience with cloud infrastructure, virtual networks, and secure server configuration, while providing a private cloud storage solution",
+    "description": "I deployed and secured Nextcloud on an Ubuntu server in Azure to gain hands-on experience with cloud infrastructure, virtual networks, and secure server configuration, while providing a private cloud storage solution.",
     "skills": ["Azure", "Networking", "Linux"],
     "demo": "https://www.example.com",
     "source": "https://www.github.com",
@@ -11,7 +29,7 @@
   {
     "title": "Splunk Monitoring and Analysis",
     "imageSrc": "projects/project4.png",
-    "description": "For practice, I deployed Splunk Enterprise and utilized the BOTSv3 dataset to simulate a real-world security environment, writing and executing custom queries to detect potential threats. I then visualized these findings in a clear and digestible manner through custom dashboards, gaining valuable practical insights and hands-on experience into security log analysis and threat detection.",
+    "description": "For practice, I deployed Splunk Enterprise and utilized the BOTSv3 dataset to simulate a real-world security environment.",
     "skills": [
       "Splunk",
       "Log Analysis",
@@ -25,17 +43,16 @@
   {
     "title": "Portfolio Website",
     "imageSrc": "projects/project3.png",
-    "description": "I built a responsive web page using React and Vite to showcase my resume, skills, and experience",
+    "description": "I built a responsive web page using React and Vite to showcase my resume, skills, and experience.",
     "skills": ["React", "Vite", "JavaScript", "JSON"],
     "demo": "https://pohi.live",
     "source": "https://github.com/Pohi11/portfolio-website",
     "id": 2
   },
-
   {
     "title": "Neuraset Medical Simulator",
     "imageSrc": "projects/project2.png",
-    "description": "I developed embedded software for a consumer EEG neurofeedback device based on patent, analyzing brain activity and providing personalized treatments using the LENS protocol",
+    "description": "I developed embedded software for a consumer EEG neurofeedback device based on patent, analyzing brain activity and providing personalized treatments using the LENS protocol.",
     "skills": ["C++", "Unit Testing", "Qt"],
     "demo": "https://youtu.be/BrvKSNk3CCA",
     "source": "https://www.github.com",
