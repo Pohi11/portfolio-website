@@ -6,6 +6,23 @@ import { getImageUrl } from "../../utils";
 export const ProjectCard = ({
   project: { title, imageSrc, description, skills, demo, source, id },
 }) => {
+  const isDemoDisabled = id === 1;
+  const isSourceDisabled = [1, 3, 4, 7].includes(id);
+
+  let demoHref = demo;
+  let demoProps = {};
+
+  if (id === 3) {
+    demoHref = "/splunkPractice.pdf";
+    demoProps = { target: "_blank", rel: "noopener noreferrer" };
+  }
+
+  const handleLinkClick = (e, disabled) => {
+    if (disabled) {
+      e.preventDefault();
+    }
+  };
+
   return (
     <div className={styles.container}>
       <img
@@ -26,96 +43,25 @@ export const ProjectCard = ({
           })}
         </ul>
         <div className={styles.links}>
-          {id === 1 && (
-            <>
-              <a
-                href={demo}
-                className={`${styles.link} ${styles.buttonStyle} ${styles.linkDisabled}`}
-              >
-                Demo
-              </a>
-              <a
-                href={source}
-                className={`${styles.link} ${styles.buttonStyle} ${styles.linkDisabled}`}
-              >
-                Source
-              </a>
-            </>
-          )}
-          {id === 2 && (
-            <>
-              <a href={demo} className={`${styles.link} ${styles.buttonStyle}`}>
-                Demo
-              </a>
-              <a href={source} className={`${styles.link} ${styles.buttonStyle}`}>
-                Source
-              </a>
-            </>
-          )}
-          {id === 3 && (
-            <>
-              <a
-                href="/splunkPractice.pdf"
-                target="_blank"
-                rel="noopener noreferrer"
-                className={`${styles.link} ${styles.buttonStyle}`}
-              >
-                Demo
-              </a>
-              <a
-                href={source}
-                className={`${styles.link} ${styles.buttonStyle} ${styles.linkDisabled}`}
-              >
-                Source
-              </a>
-            </>
-          )}
-          {id === 4 && (
-            <>
-              <a href={demo} className={`${styles.link} ${styles.buttonStyle}`}>
-                Demo
-              </a>
-              <a
-                href={source}
-                className={`${styles.link} ${styles.buttonStyle} ${styles.linkDisabled}`}
-              >
-                Source
-              </a>
-            </>
-          )}
-          {id === 5 && (
-            <>
-              <a href={demo} className={`${styles.link} ${styles.buttonStyle}`}>
-                Demo
-              </a>
-              <a href={source} className={`${styles.link} ${styles.buttonStyle}`}>
-                Source
-              </a>
-            </>
-          )}
-          {id === 6 && (
-            <>
-              <a href={demo} className={`${styles.link} ${styles.buttonStyle}`}>
-                Demo
-              </a>
-              <a href={source} className={`${styles.link} ${styles.buttonStyle}`}>
-                Source
-              </a>
-            </>
-          )}
-          {id === 7 && (
-            <>
-              <a href={demo} className={`${styles.link} ${styles.buttonStyle}`}>
-                Demo
-              </a>
-              <a
-                href={source}
-                className={`${styles.link} ${styles.buttonStyle} ${styles.linkDisabled}`}
-              >
-                Source
-              </a>
-            </>
-          )}
+          <a
+            href={isDemoDisabled ? undefined : demoHref}
+            className={`${styles.link} ${styles.buttonStyle} ${
+              isDemoDisabled ? styles.linkDisabled : ""
+            }`}
+            onClick={(e) => handleLinkClick(e, isDemoDisabled)}
+            {...demoProps}
+          >
+            Demo
+          </a>
+          <a
+            href={isSourceDisabled ? undefined : source}
+            className={`${styles.link} ${styles.buttonStyle} ${
+              isSourceDisabled ? styles.linkDisabled : ""
+            }`}
+            onClick={(e) => handleLinkClick(e, isSourceDisabled)}
+          >
+            Source
+          </a>
         </div>
       </div>
     </div>

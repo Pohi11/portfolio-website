@@ -16,7 +16,7 @@ export const Hero = () => {
           <a href="#contact" className={styles.contactBtn}>
             Contact Me
           </a>
-          <a href="/JonathanDorfman_resume.pdf" download className={styles.resumeBtn}>
+          <a href="/JonathanDorfman_Resume.pdf" download className={styles.resumeBtn}>
             Download Resume
           </a>
         </div>
