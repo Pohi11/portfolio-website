@@ -1,0 +1,30 @@
+:root {
+  /* Luxury Dark Blue + Silver Palette */
+  --color-bg: #0B1118;         /* Midnight Ink - Main background */
+  --color-text: #D4E4E8;       /* Frosted Platinum - Main text */
+  --color-text-light: #94A3B8; /* Mid-tone gray - Secondary text */
+  
+  --color-primary: #D4E4E8;    /* Silver/Platinum accent */
+  --color-secondary: #1E2A38;  /* Deep accent for hovers/bg */
+  
+  --color-accent: #D4E4E8;
+  --color-white: #FFFFFF;
+  --color-black: #000000; /* Used sparingly */
+
+  /* Typography */
+  --font-primary: "Manrope", sans-serif;
+  
+  /* Spacing - Tighter/Compact */
+  --spacing-xs: 8px;
+  --spacing-sm: 16px;
+  --spacing-md: 24px;
+  --spacing-lg: 48px;
+  --spacing-xl: 80px;
+
+  /* Transitions */
+  --transition-fast: 0.2s ease-out;
+  --transition-medium: 0.4s cubic-bezier(0.16, 1, 0.3, 1);
+  
+  /* Shadows - Adjusted for dark mode (lighter opacity) */
+  --shadow-soft: 0 10px 40px -10px rgba(0, 0, 0, 0.5);
+}

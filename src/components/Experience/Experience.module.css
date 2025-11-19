@@ -1,0 +1,156 @@
+@import "../../vars.css";
+
+.container {
+  padding: var(--spacing-lg) 10%;
+  color: var(--color-text);
+}
+
+/* Header for the grid */
+.headerGrid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  margin-bottom: var(--spacing-md);
+  border-bottom: 1px solid rgba(212, 228, 232, 0.1);
+  padding-bottom: var(--spacing-sm);
+}
+
+.title, .certificationTitle {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  color: var(--color-text-light);
+}
+
+/* Main Content Grid */
+.content {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--spacing-xl);
+  align-items: start; /* Aligns items to the top */
+}
+
+/* Minimal List Style */
+.history, .certification {
+  display: flex;
+  flex-direction: column;
+  gap: 0;
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+
+.historyItem, .certificationItem {
+  display: grid;
+  grid-template-columns: 60px 1fr; /* Logo | Content */
+  gap: var(--spacing-md);
+  padding: var(--spacing-md) 0;
+  border-bottom: 1px solid rgba(212, 228, 232, 0.1);
+}
+
+/* Remove hover background, keep it ultra-clean */
+
+.historyItem img, .certificationItem img {
+  width: 50px;
+  height: 50px;
+  object-fit: contain;
+  /* No grayscale, just natural */
+  opacity: 1;
+}
+
+.historyItemDetails, .certificationItemDetails {
+  display: flex;
+  flex-direction: column;
+}
+
+/* Header Row: Role + Org + Dates */
+.historyItemDetails h3, .certificationItemDetails h3 {
+  font-size: 1.1rem;
+  font-weight: 700;
+  margin-bottom: 4px;
+  line-height: 1.4;
+  color: var(--color-text);
+}
+
+/* Date styling */
+.historyItemDetails p, .certificationItemDetails p {
+  font-size: 0.85rem;
+  font-family: var(--font-primary);
+  color: var(--color-text-light);
+  margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+}
+
+.historyItemDetails ul, .certificationItemDetails ul {
+  padding-left: 0;
+  list-style: none;
+  margin-top: 8px;
+}
+
+.historyItemDetails ul li, .certificationItemDetails ul li {
+  position: relative;
+  padding-left: 14px;
+  margin-bottom: 6px;
+  font-size: 0.95rem;
+  color: var(--color-text);
+  line-height: 1.5;
+}
+
+.historyItemDetails ul li::before, .certificationItemDetails ul li::before {
+  content: "—";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  opacity: 0.5;
+}
+
+/* Skills section in Certs */
+.skillsTitle {
+  font-size: 0.9rem !important;
+  font-weight: 600 !important;
+  text-transform: uppercase;
+  margin-top: var(--spacing-sm) !important;
+  color: var(--color-text-light);
+}
+
+@media screen and (max-width: 960px) {
+  .content, .headerGrid {
+    grid-template-columns: 1fr;
+    gap: var(--spacing-lg);
+  }
+  
+  .certificationTitle {
+    margin-top: var(--spacing-lg);
+    padding-top: var(--spacing-lg);
+    border-top: 1px solid rgba(212, 228, 232, 0.1);
+  }
+
+  /* Hide header grid on mobile since we stack */
+  .headerGrid {
+    display: none;
+  }
+
+  /* Add pseudo headers back for mobile stacking context */
+  .historyContainer::before {
+    content: "Experience";
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-md);
+    color: var(--color-text-light);
+  }
+
+  .certificationContainer::before {
+    content: "Certifications";
+    display: block;
+    font-size: 1.5rem;
+    font-weight: 600;
+    text-transform: uppercase;
+    margin-bottom: var(--spacing-md);
+    margin-top: var(--spacing-xl);
+    color: var(--color-text-light);
+  }
+}

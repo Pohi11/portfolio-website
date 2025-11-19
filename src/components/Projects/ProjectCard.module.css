@@ -1,0 +1,131 @@
+@import "../../vars.css";
+
+.container {
+  display: flex;
+  flex-direction: column;
+  background: rgba(255, 255, 255, 0.02); /* Dark card background */
+  border: 1px solid rgba(212, 228, 232, 0.1);
+  padding: 0; /* Remove padding for full bleed image possibility */
+  transition: all var(--transition-medium);
+  height: 100%;
+  position: relative;
+  overflow: hidden;
+  border-radius: 4px;
+}
+
+.container:hover {
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+  border-color: var(--color-primary);
+  background: rgba(255, 255, 255, 0.05);
+  z-index: 1;
+}
+
+.image {
+  width: 100%;
+  height: 50%; /* Takes up top half */
+  min-height: 200px;
+  object-fit: cover;
+  filter: grayscale(100%);
+  transition: filter var(--transition-medium), transform var(--transition-medium);
+  border-bottom: 1px solid rgba(212, 228, 232, 0.1);
+}
+
+.container:hover .image {
+  filter: grayscale(0%);
+  transform: scale(1.02);
+}
+
+/* Content wrapper to add padding back */
+.contentWrapper {
+  padding: var(--spacing-md);
+  display: flex;
+  flex-direction: column;
+  flex-grow: 1;
+}
+
+.title {
+  font-size: 1.25rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-xs);
+  color: var(--color-text);
+  line-height: 1.2;
+}
+
+.description {
+  font-size: 0.95rem;
+  color: var(--color-text-light);
+  line-height: 1.5;
+  margin-bottom: var(--spacing-sm);
+  flex-grow: 1;
+}
+
+.skills {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 6px;
+  margin-bottom: var(--spacing-md);
+  list-style: none;
+}
+
+.skill {
+  font-size: 0.75rem;
+  font-weight: 600;
+  padding: 2px 10px;
+  background-color: var(--color-secondary); /* Use dark accent for tags */
+  border-radius: 4px;
+  color: var(--color-text);
+  text-transform: uppercase;
+  letter-spacing: 0.02em;
+  border: 1px solid rgba(212, 228, 232, 0.1);
+}
+
+.links {
+  display: flex;
+  gap: var(--spacing-sm);
+  margin-top: auto;
+}
+
+.link {
+  font-size: 0.85rem;
+  font-weight: 600;
+  text-decoration: none;
+  padding: 8px 20px;
+  border-radius: 100px;
+  transition: all var(--transition-fast);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  text-align: center;
+}
+
+/* Default button style (e.g. Demo) */
+.buttonStyle:not(.linkDisabled) {
+  background-color: var(--color-text); /* Silver */
+  color: var(--color-bg); /* Dark text for contrast on button */
+  border: 1px solid var(--color-text);
+}
+
+.buttonStyle:not(.linkDisabled):hover {
+  background-color: transparent;
+  color: var(--color-text);
+}
+
+/* Secondary button style (Source) */
+.links a:nth-child(2) {
+  background-color: transparent;
+  color: var(--color-text);
+  border: 1px solid var(--color-text);
+}
+
+.links a:nth-child(2):hover {
+  background-color: var(--color-text);
+  color: var(--color-bg);
+}
+
+.linkDisabled {
+  opacity: 0.3;
+  cursor: not-allowed;
+  border: 1px solid currentColor;
+  color: var(--color-text-light);
+  background: transparent !important; 
+}

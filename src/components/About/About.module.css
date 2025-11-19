@@ -1,0 +1,81 @@
+@import "../../vars.css";
+
+.container {
+  padding: var(--spacing-lg) 10%;
+  background-color: var(--color-bg);
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid rgba(212, 228, 232, 0.1);
+  color: var(--color-text-light);
+}
+
+.content {
+  display: grid;
+  grid-template-columns: 1fr;
+  gap: var(--spacing-lg);
+}
+
+/* Hide main image, focus on grid of text/concepts */
+.aboutImg {
+  display: none;
+}
+
+.aboutItems {
+  display: grid;
+  grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+  gap: var(--spacing-md);
+  width: 100%;
+}
+
+.aboutItem {
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  padding: var(--spacing-md);
+  border: 1px solid rgba(212, 228, 232, 0.1);
+  transition: all var(--transition-fast);
+  background-color: rgba(255, 255, 255, 0.02); /* Slight transparency for luxury depth */
+}
+
+.aboutItem:hover {
+  border-color: var(--color-primary);
+  transform: translateY(-4px);
+  box-shadow: var(--shadow-soft);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.aboutItem img {
+  display: none; /* Removing icons for "editorial" look */
+}
+
+.aboutItemText h3 {
+  font-size: 1.5rem;
+  font-weight: 700;
+  margin-bottom: var(--spacing-sm);
+  line-height: 1.2;
+  color: var(--color-text);
+}
+
+.aboutItemText p {
+  font-size: 1rem;
+  font-weight: 300;
+  color: var(--color-text-light);
+  line-height: 1.6;
+}
+
+@media screen and (max-width: 768px) {
+  .aboutItems {
+    grid-template-columns: 1fr;
+  }
+  
+  .container {
+    padding: var(--spacing-md) 5%;
+  }
+}

@@ -1,0 +1,59 @@
+@import "../../vars.css";
+
+.container {
+  padding: var(--spacing-lg) 10%;
+}
+
+.title {
+  font-size: 1.5rem;
+  font-weight: 600;
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
+  margin-bottom: var(--spacing-md);
+  padding-bottom: var(--spacing-sm);
+  border-bottom: 1px solid rgba(0, 34, 28, 0.1);
+  color: var(--color-text-light);
+}
+
+.projects {
+  display: grid;
+  grid-template-columns: repeat(12, 1fr);
+  gap: var(--spacing-md);
+  auto-rows: minmax(300px, auto);
+}
+
+/* Bento Grid Layout Logic */
+/* We will target children by index in global scope or use nth-child */
+
+@media screen and (min-width: 960px) {
+  /* First item large */
+  .projects > div:nth-child(1) {
+    grid-column: span 8;
+    grid-row: span 2;
+  }
+  
+  /* Second item vertical */
+  .projects > div:nth-child(2) {
+    grid-column: span 4;
+    grid-row: span 2;
+  }
+
+  /* Others standard */
+  .projects > div:nth-child(n+3) {
+    grid-column: span 4;
+    grid-row: span 1;
+  }
+  
+  /* Make 4th item wide if it exists */
+  .projects > div:nth-child(4) {
+    grid-column: span 8;
+  }
+}
+
+@media screen and (max-width: 960px) {
+  .projects {
+    display: flex;
+    flex-direction: column;
+    gap: var(--spacing-md);
+  }
+}
