@@ -1,5 +1,14 @@
 [
   {
+    "title": "AWS RAG Chatbot",
+    "imageSrc": "projects/lex.png",
+    "description": "Developed a Retrieval-Augmented Generation (RAG) chatbot using Amazon Lex, integrated with an Amazon Bedrock knowledge base populated with documents stored in an S3 bucket, to provide natural language responses about a fictional company.",
+    "skills": ["Amazon Lex", "Amazon Bedrock", "AWS S3", "RAG", "NLP"],
+    "demo": "https://www.youtube.com/watch?v=_ELxeUFAuVw",
+    "source": "https://www.github.com",
+    "id": 7
+  },
+  {
     "title": "Auto Assistant 360",
     "imageSrc": "projects/auto-assist.png",
     "description": "Developed an autonomous AI support agent using Python and OpenAI's Agent SDK during an internal hackathon at CGI.",
@@ -45,7 +54,7 @@
     "imageSrc": "projects/project3.png",
     "description": "I built a responsive web page using React and Vite to showcase my resume, skills, and experience.",
     "skills": ["React", "Vite", "JavaScript", "JSON"],
-    "demo": "https://pohi.live",
+    "demo": "https://pohi.me",
     "source": "https://github.com/Pohi11/portfolio-website",
     "id": 2
   },

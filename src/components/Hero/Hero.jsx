@@ -12,9 +12,14 @@ export const Hero = () => {
           I am a computer science student specialized in Artificial Intelligence, Cybersecurity, Automation, and Cloud
           Platforms. Keep reading to learn more!
         </p>
-        <a href="#contact" className={styles.contactBtn}>
-          Contact Me
-        </a>
+        <div className={styles.buttonContainer}>
+          <a href="#contact" className={styles.contactBtn}>
+            Contact Me
+          </a>
+          <a href="/JonathanDorfman_resume.pdf" download className={styles.resumeBtn}>
+            Download Resume
+          </a>
+        </div>
       </div>
       <img
         src={getImageUrl("hero/heroImage.png")}

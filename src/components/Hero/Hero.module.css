@@ -40,6 +40,12 @@
   margin-bottom: 52px;
 }
 
+.buttonContainer {
+  display: flex;
+  gap: 20px;
+  flex-wrap: wrap;
+}
+
 .contactBtn {
   text-decoration: none;
   background-color: var(--color-primary);
@@ -49,6 +55,23 @@
   font-weight: 600;
   padding: 17px 26px;
   box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+}
+
+.resumeBtn {
+  text-decoration: none;
+  background-color: transparent;
+  color: var(--color-text);
+  border: 2px solid var(--color-primary);
+  border-radius: 100px;
+  font-size: 30px;
+  font-weight: 600;
+  padding: 17px 26px;
+  box-shadow: 0 0 4px 0 rgba(0, 0, 0, 0.25);
+  transition: background-color 0.3s ease;
+}
+
+.resumeBtn:hover {
+  background-color: rgba(38, 70, 135, 0.5);
 }
 
 .heroImg {
