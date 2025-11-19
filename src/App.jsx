@@ -6,6 +6,7 @@ import { Experience } from "./components/Experience/Experience";
 import { Hero } from "./components/Hero/Hero";
 import { Navbar } from "./components/Navbar/Navbar";
 import { Projects } from "./components/Projects/Projects";
+import { ScrollNav } from "./components/ScrollNav/ScrollNav";
 
 function App() {
   useEffect(() => {
@@ -44,6 +45,7 @@ function App() {
       <Experience />
       <Projects />
       <Contact />
+      <ScrollNav />
     </div>
   );
 }
