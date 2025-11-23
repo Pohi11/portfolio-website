@@ -43,9 +43,9 @@ export const FeaturedProject = () => {
 
         {/* Expanded View */}
         {isExpanded && (
-          <div className={styles.expandedView} onClick={(e) => e.stopPropagation()}>
+          <div className={styles.expandedView}>
             {/* Overview */}
-            <div className={styles.overview}>
+            <div className={styles.overview} onClick={(e) => e.stopPropagation()}>
               <p className={styles.description}>
                 Single-handedly designed, built, and deployed <strong>ProductShotAI</strong>: a <strong>multimodal AI SaaS platform</strong> that 
                 instantly transforms casual product photos into studio-quality photography and complete advertisement 
@@ -61,7 +61,7 @@ export const FeaturedProject = () => {
             </div>
 
             {/* Architecture Section */}
-            <div className={styles.section}>
+            <div className={styles.section} onClick={(e) => e.stopPropagation()}>
               <h4 className={styles.sectionTitle}>Architecture & System Design</h4>
               <div className={styles.architectureGrid}>
                 <div className={styles.archItem}>
@@ -104,7 +104,7 @@ export const FeaturedProject = () => {
             </div>
 
             {/* Security & Cost Optimization */}
-            <div className={styles.section}>
+            <div className={styles.section} onClick={(e) => e.stopPropagation()}>
               <h4 className={styles.sectionTitle}>Security & Cost Optimization</h4>
               <div className={styles.highlights}>
                 <div className={styles.highlightItem}>
@@ -142,7 +142,7 @@ export const FeaturedProject = () => {
             </div>
 
             {/* Tech Stack */}
-            <div className={styles.section}>
+            <div className={styles.section} onClick={(e) => e.stopPropagation()}>
               <h4 className={styles.sectionTitle}>Tech Stack</h4>
               <div className={styles.techStack}>
                 <span>Next.js</span>
@@ -162,7 +162,7 @@ export const FeaturedProject = () => {
             </div>
 
             {/* Summary */}
-            <div className={styles.summary}>
+            <div className={styles.summary} onClick={(e) => e.stopPropagation()}>
               <p>
                 A complete, <strong>solo-developed, production-ready</strong> generative AI product that demonstrates 
                 expertise across <strong>modern full-stack development</strong>, <strong>system design</strong>, 
@@ -171,11 +171,14 @@ export const FeaturedProject = () => {
             </div>
 
             {/* Links */}
-            <div className={styles.links}>
+            <div className={styles.links} onClick={(e) => e.stopPropagation()}>
               <a 
                 href="#" 
                 className={styles.link}
-                onClick={(e) => e.preventDefault()}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }}
               >
                 <span className={styles.linkIcon}>🌐</span>
                 Live Demo
@@ -183,7 +186,10 @@ export const FeaturedProject = () => {
               <a 
                 href="#" 
                 className={styles.link}
-                onClick={(e) => e.preventDefault()}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }}
               >
                 <span className={styles.linkIcon}>📹</span>
                 Video Demo
@@ -191,7 +197,10 @@ export const FeaturedProject = () => {
               <a 
                 href="#" 
                 className={styles.link}
-                onClick={(e) => e.preventDefault()}
+                onClick={(e) => {
+                  e.preventDefault();
+                  e.stopPropagation();
+                }}
               >
                 <span className={styles.linkIcon}>💻</span>
                 Source Code

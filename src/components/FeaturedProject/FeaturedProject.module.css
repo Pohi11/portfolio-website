@@ -30,7 +30,7 @@
 }
 
 .projectCard.expanded {
-  cursor: default;
+  cursor: pointer;
 }
 
 /* Collapsed View */
@@ -124,7 +124,6 @@
 .expandedView {
   padding: 0 var(--spacing-md) var(--spacing-md) var(--spacing-md);
   animation: slideDown var(--transition-medium);
-  cursor: auto;
 }
 
 @keyframes slideDown {
