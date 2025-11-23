@@ -110,14 +110,14 @@
   color: var(--color-text);
 }
 
-/* Secondary button style (Source) */
-.links a:nth-child(2) {
+/* Secondary button style - applies to all buttons except the first */
+.links a:nth-child(n+2) {
   background-color: transparent;
   color: var(--color-text);
   border: 1px solid var(--color-text);
 }
 
-.links a:nth-child(2):hover {
+.links a:nth-child(n+2):hover {
   background-color: var(--color-text);
   color: var(--color-bg);
 }

@@ -49,7 +49,7 @@ export const FeaturedProject = () => {
               <p className={styles.description}>
                 Single-handedly designed, built, and deployed <strong>ProductShotAI</strong>: a <strong>multimodal AI SaaS platform</strong> that 
                 instantly transforms casual product photos into studio-quality photography and complete advertisement 
-                creatives using <strong>Google's Gemini 1.5 Flash</strong> (vision + text-to-image).
+                creatives using <strong>Google's Gemini 2.5 Flash</strong> (vision + text-to-image).
               </p>
               <div className={styles.highlight}>
                 <strong>1 image uploaded → 4–8 professional variations in under 60 seconds</strong>
@@ -97,7 +97,7 @@ export const FeaturedProject = () => {
                     <span className={styles.archNumber}>04</span>
                     <strong>Production Operations</strong>
                   </div>
-                  <p><strong>Zero-downtime deployments</strong> and full observability via <strong>CloudWatch</strong> 
+                  <p><strong>Zero-downtime deployments</strong> and full observability via <strong>CloudWatch </strong> 
                   for monitoring, logging, and performance tracking</p>
                 </div>
               </div>
@@ -173,12 +173,11 @@ export const FeaturedProject = () => {
             {/* Links */}
             <div className={styles.links} onClick={(e) => e.stopPropagation()}>
               <a 
-                href="#" 
+                href="https://productshotai.netlify.app/" 
                 className={styles.link}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                }}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
               >
                 <span className={styles.linkIcon}>🌐</span>
                 Live Demo
@@ -195,12 +194,11 @@ export const FeaturedProject = () => {
                 Video Demo
               </a>
               <a 
-                href="#" 
+                href="https://github.com/Pohi11/ProductShotAI" 
                 className={styles.link}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                }}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
               >
                 <span className={styles.linkIcon}>💻</span>
                 Source Code
