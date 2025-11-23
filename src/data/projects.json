@@ -1,5 +1,14 @@
 [
   {
+    "title": "ProductShotAI",
+    "imageSrc": "projects/productshotai.png",
+    "description": "Built a production-grade multimodal AI SaaS platform that transforms product photos into studio-quality images and ad creatives using Google Gemini. Architected with Next.js, FastAPI, and AWS (ECS Fargate, SQS, DynamoDB) with Terraform IaC.",
+    "skills": ["Next.js", "TypeScript", "FastAPI", "Python", "Google Gemini", "AWS", "Terraform", "Microservices"],
+    "demo": "#",
+    "source": "#",
+    "id": 8
+  },
+  {
     "title": "AWS RAG Chatbot",
     "imageSrc": "projects/lex.png",
     "description": "Developed a Retrieval-Augmented Generation (RAG) chatbot using Amazon Lex, integrated with an Amazon Bedrock knowledge base populated with documents stored in an S3 bucket, to provide natural language responses about a fictional company.",
