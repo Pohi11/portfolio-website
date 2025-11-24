@@ -5,7 +5,7 @@
     "description": "Built a production-grade multimodal AI SaaS platform that transforms product photos into studio-quality images and ad creatives using Google Gemini. Architected with Next.js, FastAPI, and AWS (ECS Fargate, SQS, DynamoDB) with Terraform IaC.",
     "skills": ["Next.js", "TypeScript", "FastAPI", "Python", "Google Gemini", "AWS", "Terraform", "Microservices"],
     "demo": "https://productshotai.netlify.app/",
-    "video": "#",
+    "video": "https://www.youtube.com/watch?v=_p8nJ8WEYhE",
     "source": "https://github.com/Pohi11/ProductShotAI",
     "id": 8
   },

@@ -17,34 +17,37 @@ export const About = () => {
           <li className={styles.aboutItem}>
             <img src={getImageUrl("about/cursorIcon.png")} alt="Cursor icon" />
             <div className={styles.aboutItemText}>
-              <h3>Life Long Student</h3>
-              <p>
-                As a fourth-year computer science student specializing in
-                cybersecurity at Carleton University, I'm passionate about
-                continuously learning and taking on new projects that challenge
-                me to grow.
-              </p>
+              <h3>Full-Stack AI Engineering</h3>
+              <p className={styles.subtitle}>Building Production AI Systems</p>
+              <ul className={styles.skillsList}>
+                <li>End-to-end AI applications & scalable SaaS solutions</li>
+                <li>Next.js, TypeScript, Python</li>
+                <li>LLMs & RAG pipelines (ProductShotAI, Auto-Assist)</li>
+              </ul>
             </div>
           </li>
           <li className={styles.aboutItem}>
             <img src={getImageUrl("about/serverIcon.png")} alt="Server icon" />
             <div className={styles.aboutItemText}>
-              <h3>Certified Cloud Enthusiast</h3>
-              <p>
-                I am currently working towards Microsoft's AZ-900 certification
-                with hands-on experience deploying and securing applications on
-                Azure virtual machines.
-              </p>
+              <h3>Cloud Architecture</h3>
+              <p className={styles.subtitle}>AWS Certified Solutions Architect</p>
+              <ul className={styles.skillsList}>
+                <li>Secure, cloud-native infrastructure design</li>
+                <li>Infrastructure as Code (Terraform)</li>
+                <li>Auto-scaling microservices on ECS Fargate</li>
+              </ul>
             </div>
           </li>
           <li className={styles.aboutItem}>
             <img src={getImageUrl("about/uiIcon.png")} alt="UI icon" />
             <div className={styles.aboutItemText}>
-              <h3>Verified Cybersecurity skills</h3>
-              <p>
-                I have demonstrated my ability by obtaining various
-                certifications from CompTIA, ISC2, Google, and more.
-              </p>
+              <h3>Cybersecurity & Compliance</h3>
+              <p className={styles.subtitle}>CompTIA Security+ Certified</p>
+              <ul className={styles.skillsList}>
+                <li>Security standards for software development</li>
+                <li>Mission-critical Government of Canada applications</li>
+                <li>Identity management & secure CI/CD pipelines</li>
+              </ul>
             </div>
           </li>
         </ul>

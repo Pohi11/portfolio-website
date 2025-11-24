@@ -70,6 +70,46 @@
   line-height: 1.6;
 }
 
+.aboutItemText p strong {
+  font-weight: 600;
+  color: var(--color-text);
+  display: block;
+  margin-bottom: 0.5em;
+}
+
+.subtitle {
+  font-size: 0.95rem;
+  font-weight: 500;
+  color: var(--color-primary);
+  margin-bottom: var(--spacing-sm);
+}
+
+.skillsList {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.skillsList li {
+  font-size: 0.95rem;
+  font-weight: 300;
+  color: var(--color-text-light);
+  line-height: 1.5;
+  padding-left: 1.25rem;
+  position: relative;
+}
+
+.skillsList li::before {
+  content: "•";
+  position: absolute;
+  left: 0;
+  color: var(--color-primary);
+  font-weight: bold;
+}
+
 @media screen and (max-width: 768px) {
   .aboutItems {
     grid-template-columns: 1fr;

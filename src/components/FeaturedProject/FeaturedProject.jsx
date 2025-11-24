@@ -183,12 +183,11 @@ export const FeaturedProject = () => {
                 Live Demo
               </a>
               <a 
-                href="#" 
+                href="https://www.youtube.com/watch?v=_p8nJ8WEYhE" 
                 className={styles.link}
-                onClick={(e) => {
-                  e.preventDefault();
-                  e.stopPropagation();
-                }}
+                target="_blank"
+                rel="noopener noreferrer"
+                onClick={(e) => e.stopPropagation()}
               >
                 <span className={styles.linkIcon}>📹</span>
                 Video Demo
