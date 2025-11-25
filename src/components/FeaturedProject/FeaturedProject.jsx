@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import styles from "./FeaturedProject.module.css";
 import { getImageUrl } from "../../utils";
 
@@ -6,6 +6,7 @@ export const FeaturedProject = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isFullDetails, setIsFullDetails] = useState(false);
   const [activeTab, setActiveTab] = useState("architecture");
+  const [expandedImage, setExpandedImage] = useState(null);
 
   const handleToggle = () => {
     if (isExpanded) {
@@ -21,6 +22,25 @@ export const FeaturedProject = () => {
     e.stopPropagation();
     setIsFullDetails(true);
   };
+
+  const handleImageClick = (e, imageSrc) => {
+    e.stopPropagation();
+    setExpandedImage(imageSrc);
+  };
+
+  const closeExpandedImage = () => {
+    setExpandedImage(null);
+  };
+
+  useEffect(() => {
+    const handleEscape = (e) => {
+      if (e.key === "Escape" && expandedImage) {
+        closeExpandedImage();
+      }
+    };
+    document.addEventListener("keydown", handleEscape);
+    return () => document.removeEventListener("keydown", handleEscape);
+  }, [expandedImage]);
 
   const tabs = [
     { id: "architecture", label: "Architecture & Reliability" },
@@ -134,11 +154,12 @@ export const FeaturedProject = () => {
                   {activeTab === "architecture" && (
                     <div className={styles.fadeIn}>
                       <div className={styles.diagramBlock}>
-                        <h4 className={styles.diagramTitle}>☁️ Cloud Native Architecture</h4>
+                        <h4 className={styles.diagramTitle}>Cloud Native Architecture</h4>
                         <img 
                           src={getImageUrl("projects/productshotai-arch.png")} 
                           alt="Architecture Diagram: Next.js -> FastAPI -> ECS Workers"
                           className={styles.diagramImage}
+                          onClick={(e) => handleImageClick(e, getImageUrl("projects/productshotai-arch.png"))}
                           onError={(e) => {e.target.style.display='none'; e.target.nextSibling.style.display='block'}} 
                         />
                         <p style={{display:'none', textAlign:'center', padding:'20px', color:'#94A3B8', border:'1px dashed #333'}}>
@@ -162,11 +183,12 @@ export const FeaturedProject = () => {
                       </div>
 
                       <div className={styles.diagramBlock}>
-                        <h4 className={styles.diagramTitle}>🔄 AI Reliability & Error Handling</h4>
+                        <h4 className={styles.diagramTitle}>AI Reliability & Error Handling</h4>
                         <img 
                           src={getImageUrl("projects/productshotai-gemini.png")} 
                           alt="Gemini Failure Handling Flow"
                           className={styles.diagramImage}
+                          onClick={(e) => handleImageClick(e, getImageUrl("projects/productshotai-gemini.png"))}
                           onError={(e) => {e.target.style.display='none'; e.target.nextSibling.style.display='block'}}
                         />
                          <p style={{display:'none', textAlign:'center', padding:'20px', color:'#94A3B8', border:'1px dashed #333'}}>
@@ -179,11 +201,12 @@ export const FeaturedProject = () => {
                       </div>
 
                       <div className={styles.diagramBlock}>
-                         <h4 className={styles.diagramTitle}>🚀 CI/CD & Deployment</h4>
+                         <h4 className={styles.diagramTitle}>CI/CD & Deployment</h4>
                           <img 
                           src={getImageUrl("projects/productshotai-deploy.png")} 
                           alt="Deployment Pipeline Diagram"
                           className={styles.diagramImage}
+                          onClick={(e) => handleImageClick(e, getImageUrl("projects/productshotai-deploy.png"))}
                           onError={(e) => {e.target.style.display='none'; e.target.nextSibling.style.display='block'}}
                         />
                         <p style={{display:'none', textAlign:'center', padding:'20px', color:'#94A3B8', border:'1px dashed #333'}}>
@@ -244,9 +267,11 @@ export const FeaturedProject = () => {
                         </table>
                       </div>
 
-                      <div className={styles.quoteBox}>
-                        "I initially built this with ECS to learn container orchestration, but after analyzing usage patterns, 
-                        I identified that a serverless architecture would reduce costs by 90% while maintaining functionality."
+                      <div className={styles.overview}>
+                        <p className={styles.description}>
+                          I initially built this with ECS to learn container orchestration, but after analyzing usage patterns, 
+                          I identified that a serverless architecture would reduce costs by 90% while maintaining functionality.
+                        </p>
                       </div>
                     </div>
                   )}
@@ -256,44 +281,40 @@ export const FeaturedProject = () => {
                        <div className={styles.challengeCard}>
                           <div className={styles.challengeHeader}>
                              <span className={styles.challengeIcon}>🔄</span>
-                             <span className={styles.challengeTitle}>Image Refinement</span>
+                             <span className={styles.challengeTitle}>The Iterative Pipeline</span>
                           </div>
                           <p className={styles.challengeText}>
-                             <strong>Challenge:</strong> Moving processed images back to raw buckets for iteration.<br/>
-                             <strong>Solution:</strong> Configured precise IAM policies and S3 event triggers to handle cross-bucket operations securely.
+                             Standard data pipelines are linear, but creative design is iterative. To allow users to refine their results, I engineered a circular data flow where processed images feed back into the raw input bucket. I secured this cross-bucket cycle with granular IAM policies, ensuring strict access control while enabling a seamless "edit-and-retry" user loop.
                           </p>
                        </div>
 
                        <div className={styles.challengeCard}>
                           <div className={styles.challengeHeader}>
                              <span className={styles.challengeIcon}>🤖</span>
-                             <span className={styles.challengeTitle}>AI Reliability</span>
+                             <span className={styles.challengeTitle}>Defensive Engineering</span>
                           </div>
                           <p className={styles.challengeText}>
-                             <strong>Challenge:</strong> Gemini API instability (15-20% fail rate).<br/>
-                             <strong>Solution:</strong> Implemented comprehensive error handling, retry logic with exponential backoff, and detailed logging.
+                             Relying on bleeding-edge AI models meant accepting volatility (a ~20% external API failure rate). I hardened the system by implementing exponential backoff with jitter—a retry strategy that prevents server overload. This turns fatal backend errors into invisible, handled delays, maintaining a smooth experience despite upstream instability.
                           </p>
                        </div>
 
                        <div className={styles.challengeCard}>
                           <div className={styles.challengeHeader}>
                              <span className={styles.challengeIcon}>💰</span>
-                             <span className={styles.challengeTitle}>Cost Optimization</span>
+                             <span className={styles.challengeTitle}>Serverless Refactoring</span>
                           </div>
                           <p className={styles.challengeText}>
-                             <strong>Challenge:</strong> High fixed costs of NAT Gateways and ALBs.<br/>
-                             <strong>Solution:</strong> Architected a serverless migration plan reducing costs from $95/mo to projected $5/mo.
+                             I initially deployed a 3-tier ECS architecture to gain experience with different AWS services. However, I realized the $64/mo cost for idle networking (NAT/ALB) was inefficient for this specific workload. I re-architected to a Serverless-First model (Lambda), cutting monthly overhead to under $5 and proving that the "best" architecture fits the usage pattern.
                           </p>
                        </div>
 
                        <div className={styles.challengeCard}>
                           <div className={styles.challengeHeader}>
                              <span className={styles.challengeIcon}>🔒</span>
-                             <span className={styles.challengeTitle}>HTTPS Without Domain</span>
+                             <span className={styles.challengeTitle}>Zero-Cost Security</span>
                           </div>
                           <p className={styles.challengeText}>
-                             <strong>Challenge:</strong> Secure delivery without buying a domain.<br/>
-                             <strong>Solution:</strong> Leveraged CloudFront's default certificate and distribution domain for free SSL/TLS.
+                             I needed production-grade encryption without the recurring cost of a custom domain. By fronting the application with CloudFront, I leveraged its default SSL distribution to enforce HTTPS. This not only resolved mixed-content security warnings but also reduced latency by caching static assets at the edge, globally.
                           </p>
                        </div>
                     </div>
@@ -326,6 +347,20 @@ export const FeaturedProject = () => {
           </div>
         )}
       </div>
+
+      {/* Image Modal Overlay */}
+      {expandedImage && (
+        <div className={styles.imageModalOverlay} onClick={closeExpandedImage}>
+          <div className={styles.imageModalContent} onClick={(e) => e.stopPropagation()}>
+            <button className={styles.imageModalClose} onClick={closeExpandedImage}>×</button>
+            <img 
+              src={expandedImage} 
+              alt="Expanded diagram"
+              className={styles.imageModalImage}
+            />
+          </div>
+        </div>
+      )}
     </section>
   );
 };
