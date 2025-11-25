@@ -5,14 +5,14 @@ import { getImageUrl } from "../../utils";
 export const FeaturedProject = () => {
   const [isExpanded, setIsExpanded] = useState(false);
   const [isFullDetails, setIsFullDetails] = useState(false);
-  const [activeTab, setActiveTab] = useState("architecture");
+  const [activeTab, setActiveTab] = useState("deepdive");
   const [expandedImage, setExpandedImage] = useState(null);
 
   const handleToggle = () => {
     if (isExpanded) {
       setIsExpanded(false);
       setIsFullDetails(false);
-      setActiveTab("architecture"); // Reset tab
+      setActiveTab("deepdive"); // Reset tab
     } else {
       setIsExpanded(true);
     }
@@ -43,6 +43,7 @@ export const FeaturedProject = () => {
   }, [expandedImage]);
 
   const tabs = [
+    { id: "deepdive", label: "Technical Deep Dive" },
     { id: "architecture", label: "Architecture & Reliability" },
     { id: "cost", label: "Cost Optimization" },
     { id: "challenges", label: "Challenges" },
@@ -151,6 +152,145 @@ export const FeaturedProject = () => {
                 </div>
 
                 <div className={styles.tabContent}>
+                  {activeTab === "deepdive" && (
+                    <div className={styles.fadeIn}>
+                      <div className={styles.overview}>
+                        <h3 className={styles.projectTitle} style={{ fontSize: '1.5rem', marginTop: 0 }}>Technical Deep Dive: PhotogenAI</h3>
+                        <p className={styles.description} style={{ marginTop: '10px' }}>
+                          <strong>PhotogenAI</strong> is a cloud-native SaaS that democratizes professional product photography. By orchestrating Google’s Gemini AI via a decoupled microservices architecture, it transforms raw user uploads into studio-grade marketing assets in under 60 seconds.
+                        </p>
+                        <div className={styles.techStack} style={{ marginTop: '10px', marginBottom: '20px' }}>
+                          <span>Next.js (Frontend)</span>
+                          <span>FastAPI (API)</span>
+                          <span>Python (Worker)</span>
+                          <span>AWS ECS Fargate</span>
+                          <span>DynamoDB</span>
+                          <span>SQS</span>
+                          <span>S3</span>
+                          <span>Terraform</span>
+                        </div>
+                      </div>
+
+                      <div className={styles.diagramBlock}>
+                        <h4 className={styles.diagramTitle}>1. Cloud-Native Architecture</h4>
+                        <p className={styles.description}>
+                          The system utilizes a 3-tier microservices architecture running entirely on AWS. I moved away from a monolithic design to separate concerns: the API handles high-concurrency requests, while background workers handle CPU-intensive AI processing.
+                        </p>
+                        
+                        <img 
+                          src={getImageUrl("projects/productshotai-arch.png")} 
+                          alt="Cloud Native Architecture"
+                          className={styles.diagramImage}
+                          onClick={(e) => handleImageClick(e, getImageUrl("projects/productshotai-arch.png"))}
+                        />
+
+                        <h5 className={styles.diagramTitle} style={{ fontSize: '1rem', marginTop: '15px' }}>Key Components:</h5>
+                        <ul style={{ color: 'var(--color-text-light)', paddingLeft: '20px', lineHeight: '1.6' }}>
+                          <li style={{ marginBottom: '8px' }}><strong>Frontend (Next.js):</strong> Hosted on Netlify with CloudFront; provides real-time status polling and intuitive drag-and-drop interfaces.</li>
+                          <li style={{ marginBottom: '8px' }}><strong>API Service (FastAPI):</strong> A high-performance gateway that validates inputs and offloads processing immediately. Response time is kept under 200ms by delegating work.</li>
+                          <li style={{ marginBottom: '8px' }}><strong>Async Workers (Python):</strong> Decoupled consumers that poll SQS, process images via Gemini, and handle failures gracefully.</li>
+                          <li><strong>State Management:</strong> DynamoDB tracks job status (millisecond latency) while S3 stores heavy media assets (99.99% durability).</li>
+                        </ul>
+                      </div>
+
+                      <div className={styles.diagramBlock}>
+                        <h4 className={styles.diagramTitle}>2. The Asynchronous Event Loop</h4>
+                        <p className={styles.description}>
+                          The core engineering challenge was handling long-running AI tasks (30–90 seconds) without blocking the user interface or timing out HTTP requests. I implemented an Event-Driven Pipeline:
+                        </p>
+                        <ul style={{ color: 'var(--color-text-light)', paddingLeft: '20px', lineHeight: '1.6', marginBottom: '15px', marginTop: '10px' }}>
+                            <li style={{ marginBottom: '8px' }}><strong>Ingestion:</strong> The API accepts an image, generates a UUID, pushes a message to SQS, and immediately returns 202 Accepted to the client.</li>
+                            <li style={{ marginBottom: '8px' }}><strong>Processing:</strong> A Python worker pulls the message, retrieves the image from S3, and initiates the multi-step generation process with Gemini.</li>
+                            <li style={{ marginBottom: '8px' }}><strong>Completion:</strong> Results are uploaded to a processed S3 bucket, and the DynamoDB status is updated to COMPLETED.</li>
+                            <li><strong>Delivery:</strong> The frontend polls the status endpoint every 3 seconds, displaying results immediately upon completion.</li>
+                        </ul>
+                        <p className={styles.description}>
+                          <strong>Why SQS?</strong> This decoupling prevents data loss. If a worker crashes, the SQS visibility timeout ensures the message becomes visible to another worker instance automatically after 120 seconds.
+                        </p>
+                      </div>
+
+                      <div className={styles.diagramBlock}>
+                        <h4 className={styles.diagramTitle}>3. Network Isolation & Security</h4>
+                        <p className={styles.description}>
+                          Security was architected at the network level using a VPC with tiered subnets.
+                        </p>
+                        <ul style={{ color: 'var(--color-text-light)', paddingLeft: '20px', lineHeight: '1.6', marginBottom: '15px', marginTop: '10px' }}>
+                          <li style={{ marginBottom: '8px' }}><strong>Public Subnets:</strong> Host only the Application Load Balancer (ALB) and NAT Gateway.</li>
+                          <li style={{ marginBottom: '8px' }}><strong>Private Subnets:</strong> Host the ECS Containers (API and Workers). These have zero direct ingress from the internet. They can only receive traffic via the ALB or talk outbound via the NAT Gateway.</li>
+                          <li><strong>Defense in Depth:</strong> This ensures that even if a container vulnerability exists, attackers cannot directly address the backend services.</li>
+                        </ul>
+                        <p className={styles.description}>
+                          <strong>Infrastructure as Code (IaC):</strong> The entire environment—VPC, Subnets, Security Groups, and IAM roles—is defined in Terraform. This allows for exact replication of the production environment in staging with a single command (<code>terraform apply</code>).
+                        </p>
+                      </div>
+
+                      <div className={styles.diagramBlock}>
+                        <h4 className={styles.diagramTitle}>4. Reliability & CI/CD</h4>
+                        <p className={styles.description}>
+                          To ensure stability for a production-grade application, I automated the deployment pipeline and hardened the error handling.
+                        </p>
+                        
+                        <img 
+                          src={getImageUrl("projects/productshotai-deploy.png")} 
+                          alt="Reliability & CI/CD"
+                          className={styles.diagramImage}
+                          onClick={(e) => handleImageClick(e, getImageUrl("projects/productshotai-deploy.png"))}
+                        />
+
+                        <ul style={{ color: 'var(--color-text-light)', paddingLeft: '20px', lineHeight: '1.6', marginTop: '15px' }}>
+                          <li style={{ marginBottom: '8px' }}><strong>Automated Deployment:</strong> A push to main triggers a pipeline that builds Docker images, pushes them to AWS ECR, and forces a rolling update on ECS Fargate without downtime.</li>
+                          <li><strong>Resilience:</strong> The Gemini API has a roughly 15-20% failure rate. I implemented an exponential backoff strategy. The worker retries failed generations with increasing delays (1s, 2s, 4s) before marking a job as failed, ensuring transient errors don't impact the user.</li>
+                        </ul>
+                      </div>
+
+                      <div className={styles.diagramBlock}>
+                        <h4 className={styles.diagramTitle}>5. Architectural Decisions & Trade-offs</h4>
+                        <p className={styles.description} style={{ marginBottom: '15px' }}>
+                            Every engineering choice required balancing cost, performance, and complexity.
+                        </p>
+                        
+                        <div className={styles.challengeCard} style={{ marginBottom: '15px' }}>
+                            <div className={styles.challengeHeader}>
+                                <span className={styles.challengeTitle}>Decision: DynamoDB vs. RDS (Postgres)</span>
+                            </div>
+                            <p className={styles.challengeText}>
+                                <strong>Choice:</strong> DynamoDB.<br/>
+                                <strong>Reasoning:</strong> The data model is simple (Key-Value lookups by job_id). DynamoDB offers single-digit millisecond reads and serverless scaling. Managing connections for a relational database would have added unnecessary overhead for this specific schema.
+                            </p>
+                        </div>
+
+                        <div className={styles.challengeCard} style={{ marginBottom: '15px' }}>
+                            <div className={styles.challengeHeader}>
+                                <span className={styles.challengeTitle}>Decision: ECS Fargate vs. AWS Lambda</span>
+                            </div>
+                            <p className={styles.challengeText}>
+                                <strong>Choice:</strong> ECS Fargate (Containers).<br/>
+                                <strong>Reasoning:</strong> While Lambda is cheaper for sporadic traffic, AI image generation takes 30–90 seconds. Lambda's cold starts and strict timeout limits posed risks for long-tail processing. Fargate provides a stable, persistent environment for the workers to maintain long-polling connections to SQS.
+                            </p>
+                        </div>
+
+                        <div className={styles.challengeCard}>
+                            <div className={styles.challengeHeader}>
+                                <span className={styles.challengeTitle}>Decision: S3 Lifecycle Policies</span>
+                            </div>
+                            <p className={styles.challengeText}>
+                                <strong>Choice:</strong> 24-hour Retention Policy.<br/>
+                                <strong>Reasoning:</strong> To optimize costs and respect user privacy, raw and processed images are automatically deleted by S3 lifecycle rules after 24 hours. This prevents storage costs from growing linearly with usage.
+                            </p>
+                        </div>
+                      </div>
+
+                      <div className={styles.diagramBlock}>
+                        <h4 className={styles.diagramTitle}>6. Future Roadmap</h4>
+                        <ul style={{ color: 'var(--color-text-light)', paddingLeft: '20px', lineHeight: '1.6', marginTop: '10px' }}>
+                            <li style={{ marginBottom: '8px' }}><strong>Cost Optimization:</strong> Migrating the API layer to Lambda (Serverless) to eliminate idle container costs, while keeping Workers on Fargate.</li>
+                            <li style={{ marginBottom: '8px' }}><strong>Global Scaling:</strong> Implementing Multi-Region deployment with Route53 latency-based routing.</li>
+                            <li><strong>Observability:</strong> Adding AWS X-Ray for distributed tracing across the microservices.</li>
+                        </ul>
+                      </div>
+                    </div>
+                  )}
+
                   {activeTab === "architecture" && (
                     <div className={styles.fadeIn}>
                       <div className={styles.diagramBlock}>
