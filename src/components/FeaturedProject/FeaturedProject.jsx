@@ -4,6 +4,30 @@ import { getImageUrl } from "../../utils";
 
 export const FeaturedProject = () => {
   const [isExpanded, setIsExpanded] = useState(false);
+  const [isFullDetails, setIsFullDetails] = useState(false);
+  const [activeTab, setActiveTab] = useState("architecture");
+
+  const handleToggle = () => {
+    if (isExpanded) {
+      setIsExpanded(false);
+      setIsFullDetails(false);
+      setActiveTab("architecture"); // Reset tab
+    } else {
+      setIsExpanded(true);
+    }
+  };
+
+  const handleReadMore = (e) => {
+    e.stopPropagation();
+    setIsFullDetails(true);
+  };
+
+  const tabs = [
+    { id: "architecture", label: "Architecture & Reliability" },
+    { id: "cost", label: "Cost Optimization" },
+    { id: "challenges", label: "Challenges" },
+    { id: "stack", label: "Tech Stack" },
+  ];
 
   return (
     <section className={styles.container} id="featured">
@@ -11,10 +35,10 @@ export const FeaturedProject = () => {
       
       <div 
         className={`${styles.projectCard} ${isExpanded ? styles.expanded : ""}`}
-        onClick={() => setIsExpanded(!isExpanded)}
+        onClick={!isExpanded ? handleToggle : undefined}
       >
-        {/* Collapsed View - Always Visible */}
-        <div className={styles.collapsedView}>
+        {/* Collapsed View - Always Visible Header */}
+        <div className={styles.collapsedView} onClick={isExpanded ? handleToggle : undefined}>
           <div className={styles.imageContainer}>
             <img 
               src={getImageUrl("projects/productshotai.png")} 
@@ -44,173 +68,264 @@ export const FeaturedProject = () => {
         {/* Expanded View */}
         {isExpanded && (
           <div className={styles.expandedView}>
-            {/* Overview */}
-            <div className={styles.overview} onClick={(e) => e.stopPropagation()}>
-              <p className={styles.description}>
-                Single-handedly designed, built, and deployed <strong>ProductShotAI</strong>: a <strong>multimodal AI SaaS platform</strong> that 
-                instantly transforms casual product photos into studio-quality photography and complete advertisement 
-                creatives using <strong>Google's Gemini 2.5 Flash</strong> (vision + text-to-image).
-              </p>
-              <div className={styles.highlight}>
-                <strong>1 image uploaded → 4–8 professional variations in under 60 seconds</strong>
-                <p className={styles.highlightSubtext}>
-                  Different angles, lighting, backgrounds, or full ad layouts powered by advanced prompt engineering 
-                  and in-painting techniques that preserve perfect subject fidelity.
+            {!isFullDetails ? (
+              // Summary View
+              <div className={styles.summaryContainer} onClick={(e) => e.stopPropagation()}>
+                <div className={styles.summaryLinks}>
+                  <a 
+                    href="https://productshotai.netlify.app/" 
+                    className={styles.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className={styles.linkIcon}>🌐</span>
+                    Live Demo
+                  </a>
+                  <a 
+                    href="https://www.youtube.com/watch?v=_p8nJ8WEYhE" 
+                    className={styles.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className={styles.linkIcon}>📹</span>
+                    Video Demo
+                  </a>
+                  <a 
+                    href="https://github.com/Pohi11/ProductShotAI" 
+                    className={styles.link}
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
+                    <span className={styles.linkIcon}>💻</span>
+                    Source Code
+                  </a>
+                </div>
+
+                <p className={styles.summaryText}>
+                  A complete, <strong>solo-developed, production-ready</strong> generative AI product that demonstrates 
+                  expertise across <strong>modern full-stack development</strong>, <strong>system design</strong>, 
+                  <strong> DevOps</strong>, and <strong>large-scale multimodal AI integration</strong>.
                 </p>
-              </div>
-            </div>
 
-            {/* Architecture Section */}
-            <div className={styles.section} onClick={(e) => e.stopPropagation()}>
-              <h4 className={styles.sectionTitle}>Architecture & System Design</h4>
-              <div className={styles.architectureGrid}>
-                <div className={styles.archItem}>
-                  <div className={styles.archHeader}>
-                    <span className={styles.archNumber}>01</span>
-                    <strong>Microservices Architecture</strong>
-                  </div>
-                  <p>End-to-end production-grade system: <strong>Next.js + TypeScript</strong> frontend → 
-                  <strong> FastAPI</strong> backend → <strong>asynchronous Python workers</strong> on AWS</p>
-                </div>
+                <button className={styles.readMoreButton} onClick={handleReadMore}>
+                  Read Full Case Study ↓
+                </button>
                 
-                <div className={styles.archItem}>
-                  <div className={styles.archHeader}>
-                    <span className={styles.archNumber}>02</span>
-                    <strong>Event-Driven Scalability</strong>
-                  </div>
-                  <p><strong>SQS</strong> decoupling for async processing, <strong>DynamoDB</strong> job state tracking, 
-                  and horizontally <strong>auto-scaled ECS Fargate</strong> services (scales from 1 → 20+ workers based on queue depth)</p>
-                </div>
-                
-                <div className={styles.archItem}>
-                  <div className={styles.archHeader}>
-                    <span className={styles.archNumber}>03</span>
-                    <strong>Infrastructure-as-Code</strong>
-                  </div>
-                  <p>Full <strong>Terraform</strong> implementation: multi-AZ VPC, private subnets, 
-                  <strong> ALB + CloudFront CDN</strong>, dead-letter queues, <strong>least-privilege IAM</strong>, 
-                  24-hour data ephemerality</p>
-                </div>
-                
-                <div className={styles.archItem}>
-                  <div className={styles.archHeader}>
-                    <span className={styles.archNumber}>04</span>
-                    <strong>Production Operations</strong>
-                  </div>
-                  <p><strong>Zero-downtime deployments</strong> and full observability via <strong>CloudWatch </strong> 
-                  for monitoring, logging, and performance tracking</p>
+                <div className={styles.collapsePrompt} onClick={handleToggle}>
+                  <span>Click to collapse ↑</span>
                 </div>
               </div>
-            </div>
+            ) : (
+              // Full Details View (Case Study)
+              <div className={styles.caseStudyContainer} onClick={(e) => e.stopPropagation()}>
+                <div className={styles.tabs}>
+                  {tabs.map((tab) => (
+                    <button
+                      key={tab.id}
+                      className={`${styles.tab} ${activeTab === tab.id ? styles.active : ""}`}
+                      onClick={() => setActiveTab(tab.id)}
+                    >
+                      {tab.label}
+                    </button>
+                  ))}
+                </div>
 
-            {/* Security & Cost Optimization */}
-            <div className={styles.section} onClick={(e) => e.stopPropagation()}>
-              <h4 className={styles.sectionTitle}>Security & Cost Optimization</h4>
-              <div className={styles.highlights}>
-                <div className={styles.highlightItem}>
-                  <div className={styles.icon}>🛡️</div>
-                  <div>
-                    <strong>Abuse-Resistant Design</strong>
-                    <p>Rate limiting, file-size validation, and comprehensive input sanitization</p>
-                  </div>
+                <div className={styles.tabContent}>
+                  {activeTab === "architecture" && (
+                    <div className={styles.fadeIn}>
+                      <div className={styles.diagramBlock}>
+                        <h4 className={styles.diagramTitle}>☁️ Cloud Native Architecture</h4>
+                        <img 
+                          src={getImageUrl("projects/productshotai-arch.png")} 
+                          alt="Architecture Diagram: Next.js -> FastAPI -> ECS Workers"
+                          className={styles.diagramImage}
+                          onError={(e) => {e.target.style.display='none'; e.target.nextSibling.style.display='block'}} 
+                        />
+                        <p style={{display:'none', textAlign:'center', padding:'20px', color:'#94A3B8', border:'1px dashed #333'}}>
+                          (Architecture Diagram Placeholder - Please add productshotai-arch.png to assets)
+                        </p>
+                        
+                        <div className={styles.architectureGrid} style={{marginTop: '20px'}}>
+                           <div className={styles.archItem}>
+                              <strong>Microservices</strong>
+                              <p>Decoupled <strong>Next.js</strong> frontend and <strong>FastAPI</strong> backend with async Python workers.</p>
+                           </div>
+                           <div className={styles.archItem}>
+                              <strong>Event-Driven</strong>
+                              <p><strong>SQS</strong> for job queuing and <strong>DynamoDB</strong> for state tracking ensures scalability.</p>
+                           </div>
+                           <div className={styles.archItem}>
+                              <strong>Infrastructure as Code</strong>
+                              <p>Full <strong>Terraform</strong> setup for VPCs, ALBs, and ECS clusters.</p>
+                           </div>
+                        </div>
+                      </div>
+
+                      <div className={styles.diagramBlock}>
+                        <h4 className={styles.diagramTitle}>🔄 AI Reliability & Error Handling</h4>
+                        <img 
+                          src={getImageUrl("projects/productshotai-gemini.png")} 
+                          alt="Gemini Failure Handling Flow"
+                          className={styles.diagramImage}
+                          onError={(e) => {e.target.style.display='none'; e.target.nextSibling.style.display='block'}}
+                        />
+                         <p style={{display:'none', textAlign:'center', padding:'20px', color:'#94A3B8', border:'1px dashed #333'}}>
+                          (Gemini Flow Diagram Placeholder - Please add productshotai-gemini.png to assets)
+                        </p>
+                        <p className={styles.description}>
+                           Addressed <strong>15–20% Gemini API failure rate</strong> with a robust retry mechanism implementing 
+                           exponential backoff and per-image error isolation.
+                        </p>
+                      </div>
+
+                      <div className={styles.diagramBlock}>
+                         <h4 className={styles.diagramTitle}>🚀 CI/CD & Deployment</h4>
+                          <img 
+                          src={getImageUrl("projects/productshotai-deploy.png")} 
+                          alt="Deployment Pipeline Diagram"
+                          className={styles.diagramImage}
+                          onError={(e) => {e.target.style.display='none'; e.target.nextSibling.style.display='block'}}
+                        />
+                        <p style={{display:'none', textAlign:'center', padding:'20px', color:'#94A3B8', border:'1px dashed #333'}}>
+                          (Deployment Diagram Placeholder - Please add productshotai-deploy.png to assets)
+                        </p>
+                         <p className={styles.description}>
+                           Automated pipeline builds Docker images, pushes to ECR, and forces rolling ECS deployments.
+                         </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {activeTab === "cost" && (
+                    <div className={styles.fadeIn}>
+                      <div className={styles.overview}>
+                         <p className={styles.description}>
+                           <strong>Analysis:</strong> Initial implementation used ECS Fargate for learning purposes ($64/mo). 
+                           A detailed cost analysis revealed a path to <strong>$5–10/mo</strong> using a Serverless-First approach.
+                         </p>
+                      </div>
+
+                      <div className={styles.costTableContainer}>
+                        <table className={styles.costTable}>
+                          <thead>
+                            <tr>
+                              <th>Architecture</th>
+                              <th>Monthly Cost</th>
+                              <th>Complexity</th>
+                              <th>Use Case</th>
+                            </tr>
+                          </thead>
+                          <tbody>
+                            <tr>
+                              <td>Current (ECS + VPC)</td>
+                              <td>$64</td>
+                              <td>High</td>
+                              <td>Learning / Enterprise</td>
+                            </tr>
+                            <tr className={styles.highlightRow}>
+                              <td>Serverless-First (Lambda)</td>
+                              <td>$5 - $10</td>
+                              <td>Low</td>
+                              <td>Production / Efficiency</td>
+                            </tr>
+                            <tr>
+                              <td>Single Service (ECS)</td>
+                              <td>$57</td>
+                              <td>Medium</td>
+                              <td>Poor UX</td>
+                            </tr>
+                            <tr>
+                              <td>Hybrid (Lambda + ECS)</td>
+                              <td>$43</td>
+                              <td>High</td>
+                              <td>Transition</td>
+                            </tr>
+                          </tbody>
+                        </table>
+                      </div>
+
+                      <div className={styles.quoteBox}>
+                        "I initially built this with ECS to learn container orchestration, but after analyzing usage patterns, 
+                        I identified that a serverless architecture would reduce costs by 90% while maintaining functionality."
+                      </div>
+                    </div>
+                  )}
+
+                  {activeTab === "challenges" && (
+                    <div className={styles.challengesGrid}>
+                       <div className={styles.challengeCard}>
+                          <div className={styles.challengeHeader}>
+                             <span className={styles.challengeIcon}>🔄</span>
+                             <span className={styles.challengeTitle}>Image Refinement</span>
+                          </div>
+                          <p className={styles.challengeText}>
+                             <strong>Challenge:</strong> Moving processed images back to raw buckets for iteration.<br/>
+                             <strong>Solution:</strong> Configured precise IAM policies and S3 event triggers to handle cross-bucket operations securely.
+                          </p>
+                       </div>
+
+                       <div className={styles.challengeCard}>
+                          <div className={styles.challengeHeader}>
+                             <span className={styles.challengeIcon}>🤖</span>
+                             <span className={styles.challengeTitle}>AI Reliability</span>
+                          </div>
+                          <p className={styles.challengeText}>
+                             <strong>Challenge:</strong> Gemini API instability (15-20% fail rate).<br/>
+                             <strong>Solution:</strong> Implemented comprehensive error handling, retry logic with exponential backoff, and detailed logging.
+                          </p>
+                       </div>
+
+                       <div className={styles.challengeCard}>
+                          <div className={styles.challengeHeader}>
+                             <span className={styles.challengeIcon}>💰</span>
+                             <span className={styles.challengeTitle}>Cost Optimization</span>
+                          </div>
+                          <p className={styles.challengeText}>
+                             <strong>Challenge:</strong> High fixed costs of NAT Gateways and ALBs.<br/>
+                             <strong>Solution:</strong> Architected a serverless migration plan reducing costs from $95/mo to projected $5/mo.
+                          </p>
+                       </div>
+
+                       <div className={styles.challengeCard}>
+                          <div className={styles.challengeHeader}>
+                             <span className={styles.challengeIcon}>🔒</span>
+                             <span className={styles.challengeTitle}>HTTPS Without Domain</span>
+                          </div>
+                          <p className={styles.challengeText}>
+                             <strong>Challenge:</strong> Secure delivery without buying a domain.<br/>
+                             <strong>Solution:</strong> Leveraged CloudFront's default certificate and distribution domain for free SSL/TLS.
+                          </p>
+                       </div>
+                    </div>
+                  )}
+
+                  {activeTab === "stack" && (
+                    <div className={styles.techStack} style={{marginTop: '20px'}}>
+                      <span>Next.js</span>
+                      <span>TypeScript</span>
+                      <span>FastAPI</span>
+                      <span>Python</span>
+                      <span>Google Gemini Multimodal</span>
+                      <span>AWS ECS Fargate</span>
+                      <span>SQS</span>
+                      <span>DynamoDB</span>
+                      <span>S3</span>
+                      <span>CloudFront</span>
+                      <span>Terraform</span>
+                      <span>CloudWatch</span>
+                      <span>Netlify</span>
+                    </div>
+                  )}
                 </div>
-                
-                <div className={styles.highlightItem}>
-                  <div className={styles.icon}>💰</div>
-                  <div>
-                    <strong>Cost-Aware Architecture</strong>
-                    <p>Auto-expiring storage, per-second billing optimization, and efficient resource utilization</p>
-                  </div>
-                </div>
-                
-                <div className={styles.highlightItem}>
-                  <div className={styles.icon}>🔒</div>
-                  <div>
-                    <strong>Security Best Practices</strong>
-                    <p>Least-privilege IAM policies, private subnets, and secure data handling</p>
-                  </div>
-                </div>
-                
-                <div className={styles.highlightItem}>
-                  <div className={styles.icon}>⚡</div>
-                  <div>
-                    <strong>AI Processing</strong>
-                    <p>Advanced prompt engineering and in-painting techniques for perfect subject fidelity</p>
-                  </div>
+
+                <div className={styles.collapsePrompt} onClick={handleToggle}>
+                  <span>Click to collapse ↑</span>
                 </div>
               </div>
-            </div>
-
-            {/* Tech Stack */}
-            <div className={styles.section} onClick={(e) => e.stopPropagation()}>
-              <h4 className={styles.sectionTitle}>Tech Stack</h4>
-              <div className={styles.techStack}>
-                <span>Next.js</span>
-                <span>TypeScript</span>
-                <span>FastAPI</span>
-                <span>Python</span>
-                <span>Google Gemini Multimodal</span>
-                <span>AWS ECS Fargate</span>
-                <span>SQS</span>
-                <span>DynamoDB</span>
-                <span>S3</span>
-                <span>CloudFront</span>
-                <span>Terraform</span>
-                <span>CloudWatch</span>
-                <span>Netlify</span>
-              </div>
-            </div>
-
-            {/* Summary */}
-            <div className={styles.summary} onClick={(e) => e.stopPropagation()}>
-              <p>
-                A complete, <strong>solo-developed, production-ready</strong> generative AI product that demonstrates 
-                expertise across <strong>modern full-stack development</strong>, <strong>system design</strong>, 
-                <strong> DevOps</strong>, and <strong>large-scale multimodal AI integration</strong>.
-              </p>
-            </div>
-
-            {/* Links */}
-            <div className={styles.links} onClick={(e) => e.stopPropagation()}>
-              <a 
-                href="https://productshotai.netlify.app/" 
-                className={styles.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <span className={styles.linkIcon}>🌐</span>
-                Live Demo
-              </a>
-              <a 
-                href="https://www.youtube.com/watch?v=_p8nJ8WEYhE" 
-                className={styles.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <span className={styles.linkIcon}>📹</span>
-                Video Demo
-              </a>
-              <a 
-                href="https://github.com/Pohi11/ProductShotAI" 
-                className={styles.link}
-                target="_blank"
-                rel="noopener noreferrer"
-                onClick={(e) => e.stopPropagation()}
-              >
-                <span className={styles.linkIcon}>💻</span>
-                Source Code
-              </a>
-            </div>
-
-            <div className={styles.collapsePrompt}>
-              <span>Click to collapse ↑</span>
-            </div>
+            )}
           </div>
         )}
       </div>
     </section>
   );
 };
-
