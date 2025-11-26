@@ -44,6 +44,7 @@ export const FeaturedProject = () => {
 
   const tabs = [
     { id: "deepdive", label: "Technical Deep Dive" },
+    { id: "freearch", label: "Free Architecture Solution" },
     { id: "architecture", label: "Architecture & Reliability" },
     { id: "cost", label: "Cost Optimization" },
     { id: "challenges", label: "Challenges" },
@@ -99,8 +100,10 @@ export const FeaturedProject = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className={styles.linkIcon}>🌐</span>
-                    Live Demo
+                    <span className={styles.linkContent}>
+                      <span>Live Demo (Next.js)</span>
+                      <span className={styles.linkSubtext}>Bring your own key</span>
+                    </span>
                   </a>
                   <a 
                     href="https://www.youtube.com/watch?v=_p8nJ8WEYhE" 
@@ -108,7 +111,6 @@ export const FeaturedProject = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className={styles.linkIcon}>📹</span>
                     Video Demo
                   </a>
                   <a 
@@ -117,7 +119,6 @@ export const FeaturedProject = () => {
                     target="_blank"
                     rel="noopener noreferrer"
                   >
-                    <span className={styles.linkIcon}>💻</span>
                     Source Code
                   </a>
                 </div>
@@ -355,6 +356,110 @@ export const FeaturedProject = () => {
                          <p className={styles.description}>
                            Automated pipeline builds Docker images, pushes to ECR, and forces rolling ECS deployments.
                          </p>
+                      </div>
+                    </div>
+                  )}
+
+                  {activeTab === "freearch" && (
+                    <div className={styles.fadeIn}>
+                      <div className={styles.overview}>
+                        <h3 className={styles.projectTitle} style={{ fontSize: '1.5rem', marginTop: 0 }}>From Cloud-Native to Zero-Cost Edge</h3>
+                      </div>
+
+                      <div className={styles.diagramBlock}>
+                        <h4 className={styles.diagramTitle}>The Constraint</h4>
+                        <p className={styles.description}>
+                          The original AWS architecture was powerful but expensive (~$64/mo) and required me to gate access to prevent bill shock. I needed a way to allow anyone to try the app without me paying for their GPU usage.
+                        </p>
+                      </div>
+
+                      <div className={styles.diagramBlock}>
+                        <h4 className={styles.diagramTitle}>The Solution: "Bring Your Own Key" (BYOK)</h4>
+                        <p className={styles.description}>
+                          I refactored the application from a <strong>stateful, containerized backend (ECS)</strong> to a <strong>stateless, serverless architecture (Next.js Edge)</strong>. By allowing users to input their own free-tier Google Gemini API keys, I shifted the "cost of compute" from my infrastructure to the user, dropping operating costs to <strong>$0</strong>.
+                        </p>
+                      </div>
+
+                      <div className={styles.diagramBlock}>
+                        <h4 className={styles.diagramTitle}>Key Engineering Decisions</h4>
+                        <div className={styles.challengesGrid} style={{ marginTop: '15px' }}>
+                          <div className={styles.challengeCard}>
+                            <div className={styles.challengeHeader}>
+                              <span className={styles.challengeIcon}>🔐</span>
+                              <span className={styles.challengeTitle}>Ephemeral Security</span>
+                            </div>
+                            <p className={styles.challengeText}>
+                              To protect user data, API keys are stored exclusively in the browser's <strong>localStorage</strong> and sent directly to Google via proxy. They never touch a persistent database.
+                            </p>
+                          </div>
+
+                          <div className={styles.challengeCard}>
+                            <div className={styles.challengeHeader}>
+                              <span className={styles.challengeIcon}>⚡</span>
+                              <span className={styles.challengeTitle}>Sync vs. Async</span>
+                            </div>
+                            <p className={styles.challengeText}>
+                              I replaced the complex <strong>SQS/polling pipeline</strong> with a synchronous request-response model using the faster <strong>Gemini 1.5 Flash</strong> model. This reduced latency from <strong>~45s to ~10s</strong>.
+                            </p>
+                          </div>
+
+                          <div className={styles.challengeCard}>
+                            <div className={styles.challengeHeader}>
+                              <span className={styles.challengeIcon}>📦</span>
+                              <span className={styles.challengeTitle}>Payload Management</span>
+                            </div>
+                            <p className={styles.challengeText}>
+                              Serverless functions (Vercel/Netlify) have strict payload limits (4-6MB). I implemented <strong>client-side image compression (max 1536px)</strong> to ensure uploads never hit function timeouts or size caps.
+                            </p>
+                          </div>
+
+                          <div className={styles.challengeCard}>
+                            <div className={styles.challengeHeader}>
+                              <span className={styles.challengeIcon}>💾</span>
+                              <span className={styles.challengeTitle}>Base64 over S3</span>
+                            </div>
+                            <p className={styles.challengeText}>
+                              To remove storage costs, I removed S3 entirely. Generated images are returned as <strong>Base64 data URIs</strong>, rendering directly in the browser memory.
+                            </p>
+                          </div>
+                        </div>
+                      </div>
+
+                      <div className={styles.diagramBlock}>
+                        <h4 className={styles.diagramTitle}>The Stack Shift</h4>
+                        <div className={styles.costTableContainer}>
+                          <table className={styles.costTable}>
+                            <thead>
+                              <tr>
+                                <th>Component</th>
+                                <th>Before (Cloud-Native)</th>
+                                <th>After (Edge)</th>
+                              </tr>
+                            </thead>
+                            <tbody>
+                              <tr>
+                                <td><strong>Compute</strong></td>
+                                <td>AWS Fargate (Containers)</td>
+                                <td>Next.js API Routes (Serverless)</td>
+                              </tr>
+                              <tr>
+                                <td><strong>Pattern</strong></td>
+                                <td>Async Polling (SQS)</td>
+                                <td>Synchronous await</td>
+                              </tr>
+                              <tr>
+                                <td><strong>Storage</strong></td>
+                                <td>S3 Buckets</td>
+                                <td>Ephemeral Base64</td>
+                              </tr>
+                              <tr className={styles.highlightRow}>
+                                <td><strong>Cost</strong></td>
+                                <td>~$64/month</td>
+                                <td>$0/month</td>
+                              </tr>
+                            </tbody>
+                          </table>
+                        </div>
                       </div>
                     </div>
                   )}
