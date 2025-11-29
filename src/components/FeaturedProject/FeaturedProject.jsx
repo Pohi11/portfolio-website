@@ -95,7 +95,7 @@ export const FeaturedProject = () => {
               <div className={styles.summaryContainer} onClick={(e) => e.stopPropagation()}>
                 <div className={styles.summaryLinks}>
                   <a 
-                    href="https://productshotai.netlify.app/" 
+                    href="https://productshotai-seven.vercel.app/" 
                     className={styles.link}
                     target="_blank"
                     rel="noopener noreferrer"
@@ -124,7 +124,7 @@ export const FeaturedProject = () => {
                 </div>
 
                 <p className={styles.summaryText}>
-                  A complete, <strong>solo-developed, production-ready</strong> generative AI product that demonstrates 
+                  A complete, production-ready generative AI product that demonstrates 
                   expertise across <strong>modern full-stack development</strong>, <strong>system design</strong>, 
                   <strong> DevOps</strong>, and <strong>large-scale multimodal AI integration</strong>.
                 </p>

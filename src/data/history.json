@@ -1,15 +1,15 @@
 [
   {
-    "role": "Software Engineer, Co-op",
+    "role": "Software Engineer (Part-Time & Co-op)",
     "organisation": "CGI",
     "startDate": "Jan, 2025",
-    "endDate": "Aug, 2025",
+    "endDate": "Present",
     "experiences": [
-      "Designed, developed, delivered and provided ongoing support for a critical full-stack payment processing application for a key Government of Canada service using Java (Spring Boot), JavaScript, HTML, and CSS",
-      "Managed application deployment lifecycle on AWS, collaborating with cloud infrastructure teams and utilizing AWS CodeCommit for Git version control",
-      "Developed an autonomous AI agent using OpenAI's Agents SDK during an internal hackathon, enabling end-to-end support ticket resolution and streamlining customer support workflows",
-      "Architected and deployed automation tools written in Python to streamline business reports, reducing operational costs while achieving data accuracy",
-      "Designed and implemented a centralized automation dashboard using Django, consolidating multiple tools for improved operational efficiency"
+      "Handled full-stack development and deployment lifecycle of a critical payment processing application (Java Spring Boot, AWS), collaborating with the cloud team to manage the end-to-end transition for Government of Canada stakeholders",
+      "Revamped member registration workflows by implementing secure file handling and ServiceNow integration, eliminating manual email exchanges and reducing ticket resolution time",
+      "Developed custom automation tools using Python to address immediate team needs, streamlining specific workflows and eliminating repetitive manual tasks",
+      "Engineered an automated reporting pipeline using Python (Pandas) and SQL, replacing manual Excel workflows to reduce report generation time from hours to minutes while eliminating human error",
+      "Developed an autonomous AI agent using OpenAI's SDK during an internal hackathon, demonstrating rapid prototyping capabilities for end-to-end support ticket resolution"
     ],
     "imageSrc": "history/cgi.png"
   },
@@ -19,24 +19,23 @@
     "startDate": "Sep, 2023",
     "endDate": "Dec, 2023",
     "experiences": [
-      "Led business intelligence initiatives through Python-based automation tools, processing 62,000+ data points reducing manual operations time",
-      "Developed and presented operational improvement strategies through blockchain technology research and distribution system analysis",
-      "Optimized operational processes through automated data collection and analysis, enhancing system efficiency",
-      "Actively contributed to weekly strategy meetings, providing data-driven insights",
-      "Collaborated cross-functionally to deliver strategic projects, ensuring timely delivery and meeting project deadlines"
+      "Automated business intelligence workflows by developing Python scripts to process 62,000+ data points, significantly reducing manual data entry time and increasing reporting accuracy",
+      "Engineered automated data collection pipelines to replace manual aggregation, removing data entry bottlenecks and ensuring consistent delivery of operational metrics",
+      "Developed strategic improvement proposals by conducting distribution system analysis and blockchain technology research, presenting findings to senior leadership to guide future tech adoption",
+      "Collaborated cross-functionally to deliver strategic projects, ensuring strict adherence to project timelines while providing data-driven insights during weekly strategy meetings"
     ],
     "imageSrc": "history/mint.png"
   },
   {
-    "role": "Owner and Developer",
+    "role": "Founder & Full-Stack Developer",
     "organisation": "LeagueKingdom",
     "startDate": "Jun, 2020",
     "endDate": "Jul, 2022",
     "experiences": [
-      "Developed and maintained an online game account marketplace site using React, Express.js and MongoDB",
-      "Set up and managed virtual machines on a server, creating custom automation scripts to streamline backend processes, enhancing operational efficiency",
-      "Enhanced product promotion and user engagement through targeted digital marketing campaigns, resulting in a 25% increase in traffic and customer retention",
-      "Provided customer support through live chat and email tickets"
+      "Built and scaled a full-stack e-commerce marketplace from scratch using the MERN stack (MongoDB, Express.js, React, Node.js), handling user authentication, inventory management, and transactions",
+      "Managed backend infrastructure on Linux VMs, writing Bash automation scripts to streamline inventory management and order fulfillment",
+      "Executed digital marketing campaigns that increased site traffic and user retention",
+      "Managed end-to-end product lifecycle, from feature roadmap planning and UI/UX design to deployment and technical customer support"
     ],
     "imageSrc": "history/LK.png"
   }

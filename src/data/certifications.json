@@ -6,30 +6,33 @@
     "startDate": "Jul 2024",
     "endDate": "",
     "experiences": [
-      "General Security Concepts, Threats, Vulnerabilities & Mitigations, Security Architecture",
-      "Security Operations, Security Program Management & Oversight"
+      "Enterprise security concepts, threat analysis, and risk management practices",
+      "Network security configurations and vulnerability assessments",
+      "Security architecture principles and implementation strategies"
     ]
   },
   {
     "organisation": "Google",
-    "role": "Cybersecurity",
+    "role": "Cybersecurity Professional Certificate",
     "imageSrc": "history/google.png",
     "startDate": "May 2024",
     "endDate": "",
     "experiences": [
-      "Security Frameworks, Cybersecurity Tools, Network Security, Linux, SQL, Threat Analysis",
-      "Incident Response, Python Automation, Stakeholder Communication"
+      "Python, Linux, and SQL for security threat identification and analysis",
+      "Security automation tools and scripting techniques",
+      "Incident detection, response procedures, and forensics"
     ]
   },
   {
     "organisation": "ISC2",
-    "role": "CC",
+    "role": "Certified in Cybersecurity (CC)",
     "imageSrc": "history/isc2.png",
     "startDate": "May 2024",
     "endDate": "",
     "experiences": [
-      "Security Principles, Business Continuity, Disaster Recovery & Incident Response",
-      "Access Controls, Network Security, Security Operations"
+      "Security principles including Business Continuity Planning (BCP) and Disaster Recovery",
+      "Access Controls (IAM) and identity management systems",
+      "Network security fundamentals and security operations protocols"
     ]
   }
 ]
