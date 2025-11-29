@@ -512,10 +512,64 @@ export const FeaturedProject = () => {
                         </table>
                       </div>
 
-                      <div className={styles.overview}>
+                      <h4 className={styles.diagramTitle} style={{ marginTop: '30px' }}>Detailed Cost Breakdown</h4>
+                      <div className={styles.challengesGrid}>
+                        <div className={styles.challengeCard}>
+                          <div className={styles.challengeHeader}>
+                            <span className={styles.challengeIcon}>📉</span>
+                            <span className={styles.challengeTitle}>Current: ECS + VPC (~$64/mo)</span>
+                          </div>
+                          <p className={styles.challengeText}>
+                            <strong>Biggest Cost Drivers:</strong>
+                          </p>
+                          <ul style={{ color: 'var(--color-text-light)', paddingLeft: '20px', marginTop: '5px', lineHeight: '1.6' }}>
+                            <li><strong>NAT Gateway:</strong> $32/mo (50% of total) - Required for private subnet internet access.</li>
+                            <li><strong>ALB:</strong> $16/mo (25% of total) - Load balancing for ECS services.</li>
+                            <li><strong>ECS Fargate:</strong> $15/mo (23% of total) - Container compute costs.</li>
+                          </ul>
+                          <p className={styles.challengeText} style={{ marginTop: '10px', fontSize: '0.9rem', fontStyle: 'italic' }}>
+                            High base cost due to always-on networking infrastructure.
+                          </p>
+                        </div>
+
+                        <div className={styles.challengeCard} style={{ borderLeftColor: 'var(--color-primary)', background: 'rgba(212, 228, 232, 0.05)' }}>
+                          <div className={styles.challengeHeader}>
+                            <span className={styles.challengeIcon}>🚀</span>
+                            <span className={styles.challengeTitle}>Recommended: Serverless (~$5-10/mo)</span>
+                          </div>
+                          <p className={styles.challengeText}>
+                            <strong>Cost Breakdown:</strong>
+                          </p>
+                          <ul style={{ color: 'var(--color-text-light)', paddingLeft: '20px', marginTop: '5px', lineHeight: '1.6' }}>
+                            <li><strong>API Gateway:</strong> ~$1-2/mo (Pay per request)</li>
+                            <li><strong>Lambda (API):</strong> ~$0.50/mo (Free tier eligible)</li>
+                            <li><strong>Lambda (Worker):</strong> ~$2-3/mo (Sporadic usage)</li>
+                            <li><strong>CloudFront:</strong> $0 (Free tier)</li>
+                          </ul>
+                          <p className={styles.challengeText} style={{ marginTop: '10px', color: 'var(--color-primary)', fontWeight: '600' }}>
+                            ~90% Cost Reduction by removing idle resources.
+                          </p>
+                        </div>
+                      </div>
+
+                      <div className={styles.diagramBlock} style={{ marginTop: '20px' }}>
+                        <h4 className={styles.diagramTitle}>Why Serverless-First?</h4>
                         <p className={styles.description}>
+                          This architecture is better suited for sporadic, event-driven workloads like image generation. 
+                          By replacing always-on containers with <strong>AWS Lambda</strong> and removing the <strong>NAT Gateway/ALB</strong> requirement, 
+                          we eliminate paying for idle time while maintaining scalability.
+                        </p>
+                        <div className={styles.techStack} style={{ marginTop: '10px' }}>
+                          <span>Scales to Zero</span>
+                          <span>No VPC Management</span>
+                          <span>Event-Driven</span>
+                        </div>
+                      </div>
+
+                      <div className={styles.overview}>
+                        <p className={styles.description} style={{ textAlign: 'center' }}>
                           I initially built this with ECS to learn container orchestration, but after analyzing usage patterns, 
-                          I identified that a serverless architecture would reduce costs by 90% while maintaining functionality.
+                          I identified that a serverless architecture would reduce costs by 90% while maintaining functionality.                          
                         </p>
                       </div>
                     </div>
