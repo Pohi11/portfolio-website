@@ -10,6 +10,7 @@
 
 html {
   scroll-behavior: smooth;
+  zoom: 0.8; /* Makes everything appear 80% zoomed out */
 }
 
 body {
