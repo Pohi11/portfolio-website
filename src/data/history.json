@@ -1,41 +1,38 @@
 [
   {
-    "role": "Software Engineer (Part-Time & Co-op)",
+    "role": "Software Engineer Co-op",
     "organisation": "CGI",
     "startDate": "Jan, 2025",
     "endDate": "Present",
     "experiences": [
-      "Handled full-stack development and deployment lifecycle of a critical payment processing application (Java Spring Boot, AWS), collaborating with the cloud team to manage the end-to-end transition for Government of Canada stakeholders",
-      "Revamped member registration workflows by implementing secure file handling and ServiceNow integration, eliminating manual email exchanges and reducing ticket resolution time",
-      "Developed custom automation tools using Python to address immediate team needs, streamlining specific workflows and eliminating repetitive manual tasks",
-      "Engineered an automated reporting pipeline using Python (Pandas) and SQL, replacing manual Excel workflows to reduce report generation time from hours to minutes while eliminating human error",
-      "Developed an autonomous AI agent using OpenAI's SDK during an internal hackathon, demonstrating rapid prototyping capabilities for end-to-end support ticket resolution"
+      "Delivered a critical payment processing application to ISED Canada adhering to PCI DSS compliance standards by developing the full-stack Java Spring Boot solution and collaborating with the cloud team on the AWS deployment lifecycle",
+      "Reduced member registration approval time by several days by implementing secure file handling and ServiceNow integrations to eliminate manual email loops",
+      "Resolved immediate team bottlenecks to save 5+ hours of weekly labor by developing ad-hoc Python automation scripts for repetitive tasks",
+      "Reduced client report generation time from hours to minutes and eliminated human error by engineering an automated pipeline using Python (Pandas) and SQL to replace manual Excel workflows"
     ],
     "imageSrc": "history/cgi.png"
   },
   {
-    "role": "Business Intelligence & Operations Co-op",
+    "role": "Software Engineer Co-op",
     "organisation": "Royal Canadian Mint",
     "startDate": "Sep, 2023",
     "endDate": "Dec, 2023",
     "experiences": [
-      "Automated business intelligence workflows by developing Python scripts to process 62,000+ data points, significantly reducing manual data entry time and increasing reporting accuracy",
-      "Engineered automated data collection pipelines to replace manual aggregation, removing data entry bottlenecks and ensuring consistent delivery of operational metrics",
-      "Developed strategic improvement proposals by conducting distribution system analysis and blockchain technology research, presenting findings to senior leadership to guide future tech adoption",
-      "Collaborated cross-functionally to deliver strategic projects, ensuring strict adherence to project timelines while providing data-driven insights during weekly strategy meetings"
+      "Increased weekly reporting accuracy and saved several hours of manual data transfer by developing Python scripts to automate web scraping of table data and direct population of Excel reports",
+      "Delivered over 62,000 ATM addresses by executing a large-scale national data collection project and developing a scraping script utilizing BeautifulSoup to iteratively simulate postal code entry",
+      "Developed strategic improvement proposals by conducting distribution system analysis and blockchain technology research, presenting findings to senior leadership to guide future tech adoption"
     ],
     "imageSrc": "history/mint.png"
   },
   {
-    "role": "Founder & Full-Stack Developer",
+    "role": "Founder & Full Stack Developer",
     "organisation": "LeagueKingdom",
     "startDate": "Jun, 2020",
     "endDate": "Jul, 2022",
     "experiences": [
-      "Built and scaled a full-stack e-commerce marketplace from scratch using the MERN stack (MongoDB, Express.js, React, Node.js), handling user authentication, inventory management, and transactions",
-      "Managed backend infrastructure on Linux VMs, writing Bash automation scripts to streamline inventory management and order fulfillment",
-      "Executed digital marketing campaigns that increased site traffic and user retention",
-      "Managed end-to-end product lifecycle, from feature roadmap planning and UI/UX design to deployment and technical customer support"
+      "Scaled a full-stack e-commerce marketplace to support hundreds of active users and generate over $10,000 in revenue by building the platform from scratch using the MERN stack",
+      "Streamlined digital fulfillment processing, increasing operational speed by over 1000%, by implementing Bash automation scripts to manage concurrent product provisioning on Linux VM infrastructure",
+      "Maintained a 99% positive review rate by managing end-to-end technical support and resolving customer inquiries directly"
     ],
     "imageSrc": "history/LK.png"
   }

@@ -40,6 +40,19 @@ export const Navbar = () => {
           className={`${styles.menuItems} ${menuOpen ? styles.menuOpen : ""}`}
           onClick={() => setMenuOpen(false)}
         >
+          {scrolled && (
+            <li>
+              <a
+                href="#"
+                onClick={(e) => {
+                  e.preventDefault();
+                  window.scrollTo({ top: 0, behavior: "smooth" });
+                }}
+              >
+                Back To Top
+              </a>
+            </li>
+          )}
           <li>
             <a href="#about">About</a>
           </li>

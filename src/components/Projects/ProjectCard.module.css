@@ -26,13 +26,11 @@
   height: 250px; /* Fixed height for consistency */
   max-height: 250px;
   object-fit: cover;
-  filter: grayscale(100%);
-  transition: filter var(--transition-medium), transform var(--transition-medium);
+  transition: transform var(--transition-medium);
   border-bottom: 1px solid rgba(212, 228, 232, 0.1);
 }
 
 .container:hover .image {
-  filter: grayscale(0%);
   transform: scale(1.02);
 }
 

@@ -17,9 +17,77 @@
 }
 
 .content {
-  display: grid;
-  grid-template-columns: 1fr;
+  display: flex;
+  flex-direction: column;
   gap: var(--spacing-lg);
+}
+
+.dropdownContainer {
+  max-width: 800px;
+}
+
+.dropdownButton {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  width: 100%;
+  padding: var(--spacing-sm) var(--spacing-md);
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 228, 232, 0.1);
+  color: var(--color-text);
+  font-size: 1rem;
+  font-weight: 500;
+  cursor: pointer;
+  transition: all var(--transition-fast);
+  text-align: left;
+  font-family: var(--font-primary);
+}
+
+.dropdownButton:hover {
+  border-color: var(--color-primary);
+  background-color: rgba(255, 255, 255, 0.05);
+}
+
+.arrow {
+  font-size: 0.75rem;
+  transition: transform var(--transition-fast);
+  color: var(--color-primary);
+}
+
+.arrowOpen {
+  transform: rotate(180deg);
+}
+
+.dropdownContent {
+  margin-top: var(--spacing-sm);
+  padding: var(--spacing-md);
+  background-color: rgba(255, 255, 255, 0.02);
+  border: 1px solid rgba(212, 228, 232, 0.1);
+  animation: slideDown var(--transition-medium);
+}
+
+@keyframes slideDown {
+  from {
+    opacity: 0;
+    transform: translateY(-10px);
+  }
+  to {
+    opacity: 1;
+    transform: translateY(0);
+  }
+}
+
+.description {
+  font-size: 1.1rem;
+  font-weight: 300;
+  color: var(--color-text-light);
+  line-height: 1.8;
+  margin: 0;
+}
+
+.description strong {
+  color: var(--color-text);
+  font-weight: 600;
 }
 
 /* Hide main image, focus on grid of text/concepts */
@@ -42,6 +110,7 @@
   border: 1px solid rgba(212, 228, 232, 0.1);
   transition: all var(--transition-fast);
   background-color: rgba(255, 255, 255, 0.02); /* Slight transparency for luxury depth */
+  height: 100%;
 }
 
 .aboutItem:hover {
@@ -55,10 +124,14 @@
   display: none; /* Removing icons for "editorial" look */
 }
 
+.aboutItemText {
+  width: 100%;
+}
+
 .aboutItemText h3 {
-  font-size: 1.5rem;
+  font-size: 1.4rem;
   font-weight: 700;
-  margin-bottom: var(--spacing-sm);
+  margin-bottom: var(--spacing-xs);
   line-height: 1.2;
   color: var(--color-text);
 }
@@ -82,6 +155,8 @@
   font-weight: 500;
   color: var(--color-primary);
   margin-bottom: var(--spacing-sm);
+  text-transform: uppercase;
+  letter-spacing: 0.05em;
 }
 
 .skillsList {
@@ -91,6 +166,7 @@
   display: flex;
   flex-direction: column;
   gap: 0.5rem;
+  margin-top: var(--spacing-sm);
 }
 
 .skillsList li {
@@ -117,5 +193,9 @@
   
   .container {
     padding: var(--spacing-md) 5%;
+  }
+  
+  .description {
+    font-size: 1rem;
   }
 }
