@@ -369,14 +369,14 @@ export const FeaturedProject = () => {
                       <div className={styles.diagramBlock}>
                         <h4 className={styles.diagramTitle}>The Constraint</h4>
                         <p className={styles.description}>
-                          The original AWS architecture was powerful but expensive (~$64/mo) and required me to gate access to prevent bill shock. I needed a way to allow anyone to try the app without me paying for their GPU usage.
+                          The original AWS architecture was working perfectlybut expensive (~$64/mo). I needed a way to allow anyone to try the app without me paying for their GPU usage.
                         </p>
                       </div>
 
                       <div className={styles.diagramBlock}>
                         <h4 className={styles.diagramTitle}>The Solution: "Bring Your Own Key" (BYOK)</h4>
                         <p className={styles.description}>
-                          I refactored the application from a <strong>stateful, containerized backend (ECS)</strong> to a <strong>stateless, serverless architecture (Next.js Edge)</strong>. By allowing users to input their own free-tier Google Gemini API keys, I shifted the "cost of compute" from my infrastructure to the user, dropping operating costs to <strong>$0</strong>.
+                          I refactored the application from a <strong>stateful, containerized backend (ECS)</strong> to a <strong>stateless, serverless architecture (Next.js Serverless)</strong>. By allowing users to input their own free-tier Google Gemini API keys, I shifted the "cost of compute" from my infrastructure to the user, dropping operating costs to <strong>$0</strong>.
                         </p>
                       </div>
 
@@ -389,7 +389,7 @@ export const FeaturedProject = () => {
                               <span className={styles.challengeTitle}>Ephemeral Security</span>
                             </div>
                             <p className={styles.challengeText}>
-                              To protect user data, API keys are stored exclusively in the browser's <strong>localStorage</strong> and sent directly to Google via proxy. They never touch a persistent database.
+                              To protect user data, API keys are stored exclusively in <strong>React state</strong> and sent directly to Google via proxy. They never touch a persistent database.
                             </p>
                           </div>
 
@@ -399,7 +399,7 @@ export const FeaturedProject = () => {
                               <span className={styles.challengeTitle}>Sync vs. Async</span>
                             </div>
                             <p className={styles.challengeText}>
-                              I replaced the complex <strong>SQS/polling pipeline</strong> with a synchronous request-response model using the faster <strong>Gemini 1.5 Flash</strong> model. This reduced latency from <strong>~45s to ~10s</strong>.
+                              I replaced the complex <strong>SQS/polling pipeline</strong> with a synchronous request-response model using the faster <strong>Gemini 2.5 Flash</strong> model. This reduced latency from <strong>~45s to ~10s</strong>.
                             </p>
                           </div>
 
@@ -409,7 +409,7 @@ export const FeaturedProject = () => {
                               <span className={styles.challengeTitle}>Payload Management</span>
                             </div>
                             <p className={styles.challengeText}>
-                              Serverless functions (Vercel/Netlify) have strict payload limits (4-6MB). I implemented <strong>client-side image compression (max 1536px)</strong> to ensure uploads never hit function timeouts or size caps.
+                              Serverless functions have strict payload limits (~4MB). I implemented <strong>client-side image resizing (HTML5 Canvas)</strong> to ensure uploads never hit function timeouts or size caps.
                             </p>
                           </div>
 
@@ -433,14 +433,14 @@ export const FeaturedProject = () => {
                               <tr>
                                 <th>Component</th>
                                 <th>Before (Cloud-Native)</th>
-                                <th>After (Edge)</th>
+                                <th>After (Serverless)</th>
                               </tr>
                             </thead>
                             <tbody>
                               <tr>
                                 <td><strong>Compute</strong></td>
                                 <td>AWS Fargate (Containers)</td>
-                                <td>Next.js API Routes (Serverless)</td>
+                                <td>Next.js API Routes (Node.js)</td>
                               </tr>
                               <tr>
                                 <td><strong>Pattern</strong></td>

@@ -1,5 +1,20 @@
 [
   {
+    "organisation": "AWS",
+    "role": "AWS Certified Solutions Architect – Associate",
+    "imageSrc": "history/aws.png",
+    "startDate": "Nov 2025",
+    "endDate": "",
+    "experiences": [
+      "Cloud architecture design patterns and AWS Well-Architected Framework principles",
+      "Core AWS services including EC2, S3, RDS, Lambda, VPC, and CloudFront",
+      "High availability, scalability, fault tolerance, and disaster recovery solutions",
+      "Security best practices, IAM policies, encryption, and compliance on AWS",
+      "Cost optimization strategies, resource tagging, and billing management",
+      "Networking fundamentals, VPC configuration, and hybrid cloud architectures"
+    ]
+  },
+  {
     "organisation": "CompTIA",
     "role": "Security+ (SY0-701)",
     "imageSrc": "history/sec.png",

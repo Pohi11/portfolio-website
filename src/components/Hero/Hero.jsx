@@ -14,7 +14,7 @@ export const Hero = () => {
         </p>
         <div className={styles.buttonContainer}>
           <a href="#contact" className={styles.contactBtn}>
-            Contact Me
+            Contact & GitHub
           </a>
           <a href="/JonathanDorfman_Resume.pdf" download className={styles.resumeBtn}>
             Download Resume
