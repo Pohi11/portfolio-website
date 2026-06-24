@@ -1,0 +1,17 @@
+flowchart LR
+    R[("Raw UFC data<br/>2 parquet files")] --> P1
+    subgraph P1 ["001 · Data Ingestion"]
+        A1["join + clean<br/>drop draws<br/>preserve NaNs"]
+    end
+    subgraph P2 ["002 · Model Training"]
+        A2["temporal split<br/>3-model matrix<br/>select + version"]
+    end
+    subgraph P3 ["003 · Prediction API"]
+        A3["reconstruct diffs<br/>predict both ways<br/>explain (SHAP)"]
+    end
+    subgraph P4 ["004 · Web App"]
+        A4["React + Vite + TS<br/>Predict + How-It-Works"]
+    end
+    P1 -- "training table +<br/>feature contract" --> P2
+    P2 -- "model.joblib +<br/>metadata" --> P3
+    P3 -- "REST / HTTP" --> P4

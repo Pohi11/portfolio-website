@@ -1,0 +1,5 @@
+flowchart LR
+    U["User picks<br/>2 fighters"] --> L["Look up each fighter's<br/>latest absolute stats"]
+    L --> DIFF["Reconstruct<br/>diff = A − B<br/>(parity-critical)"]
+    DIFF --> PP["predict_proba<br/>both corners → average<br/>(removes corner bias)"]
+    PP --> OUT["Winner + confidence<br/>+ TreeSHAP 'why'"]

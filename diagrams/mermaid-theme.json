@@ -1,0 +1,15 @@
+{
+  "theme": "dark",
+  "themeVariables": {
+    "fontFamily": "Outfit, Poppins, sans-serif",
+    "primaryColor": "#15394a",
+    "primaryBorderColor": "#4a6b7c",
+    "primaryTextColor": "#d4e4e8",
+    "lineColor": "#4a6b7c",
+    "secondaryColor": "#0f2027",
+    "tertiaryColor": "#0f2027",
+    "clusterBkg": "#0f2027",
+    "clusterBorder": "#4a6b7c"
+  },
+  "flowchart": { "curve": "basis", "padding": 16 }
+}

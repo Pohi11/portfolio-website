@@ -1,0 +1,8 @@
+flowchart TD
+    S["Seed everything<br/>(bit-reproducible)"] --> VAL["Validate vs contract<br/>(fail-fast)"]
+    VAL --> SPLIT["Split by time<br/>70 / 15 / 15"]
+    SPLIT --> PRE["Preprocess<br/>(fit on TRAIN only)<br/>median impute + missing-indicator"]
+    PRE --> M["Train 3-model matrix<br/>LogReg · LightGBM · LightGBM+odds"]
+    M --> SEL["Select best form-only<br/>by val balanced accuracy"]
+    SEL --> EVAL["Evaluate on TEST<br/>(once)"]
+    EVAL --> VER["Version + log to MLflow<br/>data/models/&lt;run-id&gt;/"]

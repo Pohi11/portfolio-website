@@ -6,8 +6,10 @@ import { getImageUrl } from "../../utils";
 export const ProjectCard = ({
   project: { title, imageSrc, description, skills, demo, video, source, id },
 }) => {
-  const isDemoDisabled = id === 1;
-  const isSourceDisabled = [1, 3, 4, 7].includes(id);
+  // NOTE: id 9 (UFC Predictor) is temporarily disabled until its real
+  // demo (web app) + source (GitHub) URLs replace the placeholders in projects.json.
+  const isDemoDisabled = [1, 9].includes(id);
+  const isSourceDisabled = [1, 3, 4, 7, 9].includes(id);
   const isProductShotAI = id === 8;
 
   let demoHref = demo;
