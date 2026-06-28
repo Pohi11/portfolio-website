@@ -6,10 +6,8 @@ import { getImageUrl } from "../../utils";
 export const ProjectCard = ({
   project: { title, imageSrc, description, skills, demo, video, source, id },
 }) => {
-  // NOTE: id 9 (UFC Predictor) is temporarily disabled until its real
-  // demo (web app) + source (GitHub) URLs replace the placeholders in projects.json.
-  const isDemoDisabled = [1, 9].includes(id);
-  const isSourceDisabled = [1, 3, 4, 7, 9].includes(id);
+  const isDemoDisabled = [1, 4].includes(id);
+  const isSourceDisabled = [1, 3, 4, 7].includes(id);
   const isProductShotAI = id === 8;
 
   let demoHref = demo;
@@ -17,6 +15,10 @@ export const ProjectCard = ({
 
   if (id === 3) {
     demoHref = "/splunkPractice.pdf";
+    demoProps = { target: "_blank", rel: "noopener noreferrer" };
+  }
+
+  if (id === 7 || id === 9) {
     demoProps = { target: "_blank", rel: "noopener noreferrer" };
   }
 

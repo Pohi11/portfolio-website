@@ -11,8 +11,8 @@ import { getImageUrl } from "../../utils";
  * TODO_* values below once the live web app + public repo URLs are known.
  */
 
-const UFC_DEMO_URL = "TODO_WEBAPP_URL";
-const UFC_SOURCE_URL = "TODO_GITHUB_URL";
+const UFC_DEMO_URL = "https://pohi11-cage-ufc-predictor.hf.space/";
+const UFC_SOURCE_URL = "https://github.com/Pohi11/cage";
 
 /* ---------- Hand-built balanced-accuracy bar chart (palette-matched) ---------- */
 
@@ -579,10 +579,10 @@ export const productShotAIProject = {
         <div className={styles.fadeIn}>
           <div className={styles.overview}>
             <h3 className={styles.projectTitle} style={{ fontSize: "1.5rem", marginTop: 0 }}>
-              Technical Deep Dive: PhotogenAI
+              Technical Deep Dive: ProductShotAI
             </h3>
             <p className={styles.description} style={{ marginTop: "10px" }}>
-              <strong>PhotogenAI</strong> is a cloud-native SaaS that lets anyone generate
+              <strong>ProductShotAI</strong> is a cloud-native SaaS that lets anyone generate
               studio-grade product shots. A decoupled microservices backend sends each upload to
               Google's Gemini AI and returns finished marketing assets in under 60 seconds.
             </p>
