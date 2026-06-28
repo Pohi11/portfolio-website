@@ -4,8 +4,8 @@
     "imageSrc": "projects/ufc-predictor.png",
     "description": "Built an end-to-end MLOps system that predicts UFC fight outcomes. Trained and selected my own model (LightGBM, 59.6% balanced accuracy on unseen fights) on ~8,500 fights, then served it through a FastAPI API and a React web app. Leakage-safe training, MLflow tracking, versioned model contracts, TreeSHAP explainability, and 212 tests.",
     "skills": ["Python", "scikit-learn", "LightGBM", "MLflow", "FastAPI", "MLOps", "React", "TypeScript"],
-    "demo": "TODO_WEBAPP_URL",
-    "source": "TODO_GITHUB_URL",
+    "demo": "https://pohi11-cage-ufc-predictor.hf.space/",
+    "source": "https://github.com/Pohi11/cage",
     "id": 9
   },
   {

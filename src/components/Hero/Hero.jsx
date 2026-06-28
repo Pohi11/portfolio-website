@@ -9,7 +9,7 @@ export const Hero = () => {
       <div className={styles.content}>
         <h1 className={styles.title}>Hi, I'm Jonathan</h1>
         <p className={styles.description}>
-          I am a fourth year computer science student at Carleton University. I'm interested in Artificial Intelligence, Cybersecurity, Automation, and Cloud
+          I'm a software engineer at CGI and a Carleton University Computer Science graduate. I'm interested in Artificial Intelligence, Cybersecurity, Automation, and Cloud
           Architecture. Keep reading to learn more!
         </p>
         <div className={styles.buttonContainer}>

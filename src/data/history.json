@@ -1,37 +1,39 @@
 [
   {
-    "role": "Software Engineer Co-op",
+    "role": "Software Engineer",
     "organisation": "CGI",
+    "location": "Ottawa, ON",
     "startDate": "Jan, 2025",
     "endDate": "Present",
     "experiences": [
-      "Delivered a critical payment processing application to ISED Canada adhering to PCI DSS compliance standards by developing the full-stack Java Spring Boot solution and collaborating with the cloud team on the AWS deployment lifecycle",
+      "Delivered a critical payment processing application to ISED Canada adhering to PCI DSS compliance standards by developing the full-stack Java Spring Boot solution and collaborating with the cloud team on the AWS deployment",
       "Reduced member registration approval time by several days by implementing secure file handling and ServiceNow integrations to eliminate manual email loops",
       "Resolved immediate team bottlenecks to save 5+ hours of weekly labor by developing ad-hoc Python automation scripts for repetitive tasks",
-      "Reduced client report generation time from hours to minutes and eliminated human error by engineering an automated pipeline using Python (Pandas) and SQL to replace manual Excel workflows"
+      "Reduced client report generation time from hours to minutes and eliminated human error by engineering an automated pipeline using Python (Pandas) and SQL"
     ],
     "imageSrc": "history/cgi.png"
   },
   {
-    "role": "Software Engineer Co-op",
+    "role": "Software Engineer",
     "organisation": "Royal Canadian Mint",
+    "location": "Ottawa, ON",
     "startDate": "Sep, 2023",
     "endDate": "Dec, 2023",
     "experiences": [
       "Increased weekly reporting accuracy and saved several hours of manual data transfer by developing Python scripts to automate web scraping of table data and direct population of Excel reports",
-      "Delivered over 62,000 ATM addresses by executing a large-scale national data collection project and developing a scraping script utilizing BeautifulSoup to iteratively simulate postal code entry",
-      "Developed strategic improvement proposals by conducting distribution system analysis and blockchain technology research, presenting findings to senior leadership to guide future tech adoption"
+      "Delivered over 62,000 ATM addresses by executing a large-scale national data collection project and developing a scraping script utilizing BeautifulSoup to iteratively simulate postal code entry"
     ],
     "imageSrc": "history/mint.png"
   },
   {
     "role": "Founder & Full Stack Developer",
     "organisation": "LeagueKingdom",
+    "location": "Toronto, ON",
     "startDate": "Jun, 2020",
     "endDate": "Jul, 2022",
     "experiences": [
       "Scaled a full-stack e-commerce marketplace to support hundreds of active users and generate over $10,000 in revenue by building the platform from scratch using the MERN stack",
-      "Streamlined digital fulfillment processing, increasing operational speed by over 1000%, by implementing Bash automation scripts to manage concurrent product provisioning on Linux VM infrastructure",
+      "Streamlined digital fulfillment, increasing speed by over 1000%, by implementing Bash automation scripts to manage concurrent product provisioning on Linux VM infrastructure",
       "Maintained a 99% positive review rate by managing end-to-end technical support and resolving customer inquiries directly"
     ],
     "imageSrc": "history/LK.png"
