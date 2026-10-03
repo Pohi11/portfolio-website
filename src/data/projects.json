@@ -1,5 +1,32 @@
 [
   {
+    "title": "Price Hunter",
+    "imageSrc": "projects/price-hunter.png",
+    "description": "Built a serverless price tracker in Go that watches product pages and emails you when a price hits your target. Runs on AWS Lambda, SQS, DynamoDB, EventBridge and SES with a React + TypeScript UI, SSRF-safe fetching, a transactional outbox for exactly one alert per drop, Terraform for dev and prod, and 306 tests.",
+    "skills": ["Go", "AWS Lambda", "DynamoDB", "SQS", "EventBridge", "React", "TypeScript", "Terraform"],
+    "demo": "#",
+    "source": "https://github.com/Pohi11/price-hunter",
+    "id": 11
+  },
+  {
+    "title": "Ledger Platform",
+    "imageSrc": "projects/ledger-platform.png",
+    "description": "Built and deployed a payments backend on a production-style AWS stack: a FastAPI service on EKS behind an ALB and CloudFront, Multi-AZ RDS Postgres in private subnets, and an event-driven audit pipeline (SQS to Lambda to DynamoDB and S3 Object Lock). All infrastructure is Terraform, shipped through a Jenkins pipeline with Datadog logs, metrics and traces.",
+    "skills": ["AWS EKS", "Kubernetes", "Terraform", "FastAPI", "RDS Postgres", "SQS", "Lambda", "Jenkins", "Datadog"],
+    "demo": "https://ledger-platform-jd.netlify.app/",
+    "source": "https://github.com/Pohi11/aws-ledger-platform",
+    "id": 10
+  },
+  {
+    "title": "SecureDrop",
+    "imageSrc": "projects/securedrop.png",
+    "description": "Built a secure file-transfer service in Rust where clients upload directly to S3 through presigned URLs with signed SHA-256 checksums, including resumable multipart uploads up to 5 GB. Argon2id auth with refresh-token theft detection, IDOR-safe sharing, Redis rate limiting, and Terraform for ECS Fargate, KMS, WAF and GuardDuty.",
+    "skills": ["Rust", "Axum", "Tokio", "PostgreSQL", "Redis", "AWS S3", "ECS Fargate", "Terraform"],
+    "demo": "#",
+    "source": "https://github.com/Pohi11/securedrop-rust",
+    "id": 12
+  },
+  {
     "title": "CAGE — UFC Fight Outcome Predictor",
     "imageSrc": "projects/ufc-predictor.png",
     "description": "Built an end-to-end MLOps system that predicts UFC fight outcomes. Trained and selected my own model (LightGBM, 59.6% balanced accuracy on unseen fights) on ~8,500 fights, then served it through a FastAPI API and a React web app. Leakage-safe training, MLflow tracking, versioned model contracts, TreeSHAP explainability, and 212 tests.",

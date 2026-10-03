@@ -37,5 +37,5 @@ Global CSS lives in [src/index.css](src/index.css) and design tokens in [src/var
 
 ## Gotchas
 
-- **ProjectCard id-based special-casing**: [src/components/Projects/ProjectCard.jsx](src/components/Projects/ProjectCard.jsx) hardcodes behavior by project `id` — e.g. demo/source links are disabled for specific ids (`isDemoDisabled = id === 1`, `isSourceDisabled = [1,3,4,7]`), id `3` rewrites its demo to `/splunkPractice.pdf`, and id `8` (ProductShotAI) gets a distinct three-button layout. When adding or renumbering projects in `projects.json`, update these id checks accordingly.
+- **ProjectCard id-based special-casing**: [src/components/Projects/ProjectCard.jsx](src/components/Projects/ProjectCard.jsx) hardcodes behavior by project `id` — e.g. demo/source links are disabled for specific ids (`isDemoDisabled = [1,4,11,12]`, `isSourceDisabled = [1,3,4,7]`), ids `7`, `9` and `10` open their demo in a new tab, id `3` rewrites its demo to `/splunkPractice.pdf`, and id `8` (ProductShotAI) gets a distinct three-button layout. When adding or renumbering projects in `projects.json`, update these id checks accordingly.
 - The `next` dependency is dead weight; do not assume Next.js features (routing, SSR, `app/` dir) are available.

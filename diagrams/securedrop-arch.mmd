@@ -1,0 +1,6 @@
+flowchart LR
+    C["Client / CLI"] -- "auth + presign<br/>(JSON)" --> API["Rust API<br/>Axum on ECS Fargate"]
+    API --> PG[("RDS Postgres<br/>metadata · audit")]
+    API --> VK[("Valkey<br/>rate limits · sessions")]
+    C == "file bytes<br/>presigned URL<br/>(signed SHA-256)" ==> S3[("S3<br/>SSE-KMS")]
+    API -. "verify + presign" .-> S3

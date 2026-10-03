@@ -6,7 +6,7 @@ import { getImageUrl } from "../../utils";
 export const ProjectCard = ({
   project: { title, imageSrc, description, skills, demo, video, source, id },
 }) => {
-  const isDemoDisabled = [1, 4].includes(id);
+  const isDemoDisabled = [1, 4, 11, 12].includes(id);
   const isSourceDisabled = [1, 3, 4, 7].includes(id);
   const isProductShotAI = id === 8;
 
@@ -18,7 +18,7 @@ export const ProjectCard = ({
     demoProps = { target: "_blank", rel: "noopener noreferrer" };
   }
 
-  if (id === 7 || id === 9) {
+  if (id === 7 || id === 9 || id === 10) {
     demoProps = { target: "_blank", rel: "noopener noreferrer" };
   }
 
