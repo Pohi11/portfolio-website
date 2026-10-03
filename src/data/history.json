@@ -6,10 +6,11 @@
     "startDate": "Jan, 2025",
     "endDate": "Present",
     "experiences": [
+      "Led a cross-functional team adopting AI-native, spec-driven development (BMad, Claude Code), building much of an internal operations platform on Azure with Next.js, Prisma, and PostgreSQL",
+      "Centralized manual workflows for KPI tracking, accounts receivable outreach, member suspensions, and write-off identification and file preparation, saving 20+ hours of weekly labor",
       "Delivered a critical payment processing application to ISED Canada adhering to PCI DSS compliance standards by developing the full-stack Java Spring Boot solution and collaborating with the cloud team on the AWS deployment",
-      "Reduced member registration approval time by several days by implementing secure file handling and ServiceNow integrations to eliminate manual email loops",
-      "Resolved immediate team bottlenecks to save 5+ hours of weekly labor by developing ad-hoc Python automation scripts for repetitive tasks",
-      "Reduced client report generation time from hours to minutes and eliminated human error by engineering an automated pipeline using Python (Pandas) and SQL"
+      "Shortened member registration approval time by several days by implementing secure file handling and ServiceNow integrations",
+      "Cut client report generation from hours to minutes and eliminated manual errors with Python (Pandas) and SQL pipelines"
     ],
     "imageSrc": "history/cgi.png"
   },
